@@ -119,5 +119,5 @@ BacktestResult BacktestEngine::runBacktest(
     result.finalBalance = currentBalance;
     result.totalReturn = ((currentBalance - initialCapital) / initialCapital) * 100.0;
     result.maxDrawdown = calculateMaxDrawDown(result.equityCurve);
-    result.winRate = (result.totalTrades > 0 )
+    result.winRate = (result.totalTrades > 0) ? static_cast<double>
 }
