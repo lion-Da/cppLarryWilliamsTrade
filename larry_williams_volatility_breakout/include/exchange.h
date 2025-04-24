@@ -23,7 +23,7 @@ class Exchange
         bool connected = false;
         string api_key;
         string api_secret;
-        virtual string buildApriliUrl(const string& endpoint) = 0;
+        virtual string buildApiUrl(const string& endpoint) = 0;
         virtual string signRequest(const string& data) = 0;
 };
 

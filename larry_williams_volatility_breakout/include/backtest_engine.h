@@ -32,6 +32,7 @@ struct Trade
 
 class BacktestEngine
 {
+public:
     BacktestEngine();
 
     void setInitialCapital(double capital);

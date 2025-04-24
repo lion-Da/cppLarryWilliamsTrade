@@ -119,5 +119,37 @@ BacktestResult BacktestEngine::runBacktest(
     result.finalBalance = currentBalance;
     result.totalReturn = ((currentBalance - initialCapital) / initialCapital) * 100.0;
     result.maxDrawdown = calculateMaxDrawDown(result.equityCurve);
-    result.winRate = (result.totalTrades > 0) ? static_cast<double>
+    result.winRate = (result.totalTrades > 0) ? static_cast<double>(result.winningTrades) / result.totalTrades : 0.0;
+    return result;
+}
+double BacktestEngine::calculateMaxDrawDown(const std::vector<double>& equityCurve) const{
+    double maxDrawdown = 0.0;
+    double peak = equityCurve[0];
+    for(const double& equity: equityCurve)
+    {
+        if(equity > peak)
+        {
+            peak = equity;
+        }
+        double drawdown = (peak - equity) / peak;
+        maxDrawdown = std::max(maxDrawdown, drawdown);
+    }
+    return maxDrawdown;
+}
+std::string BacktestEngine::generateReport(const BacktestResult& result) const
+{
+    std::stringstream ss;
+    ss << "===== BACKTEST RESULTS =====\n\n";
+    ss << "Initial Capital: $" << std::fixed << std::setprecision(2) << result.initialBalance << "\n";
+    ss << "Final Capital: $" << std::fixed << std::setprecision(2) << result.finalBalance << "\n";
+    ss << "Total Return: " << std::fixed << std::setprecision(2) << result.totalReturn << "%\n\n";
+    
+    ss << "Total Trades: " << result.totalTrades << "\n";
+    ss << "Winning Trades: " << result.winningTrades << "\n";
+    ss << "Losing Trades: " << result.losingTrades << "\n";
+    ss << "Win Rate: " << std::fixed << std::setprecision(2) << (result.winRate * 100.0) << "%\n\n";
+    
+    ss << "Max Drawdown: " << std::fixed << std::setprecision(2) << (result.maxDrawdown * 100.0) << "%\n";
+    
+    return ss.str();
 }
