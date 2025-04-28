@@ -18,7 +18,10 @@ add_executable(volatility_breakout ${SOURCES})
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIR})
 target_link_libraries(volatility_breakout ${CURL_LIBRARIES})
-
+# Find OpenSSL needed for the HMAC-SHA256 
+find_package(OpenSSL REQUIRED)
+include_directories(${OPENSSL_INCLUDE_DIR})
+target_link_libraries(volatility_breakout ${OPENSSL_LIBRARIES})
 # Find JSON library (nlohmann/json)
 find_package(nlohmann_json 3.2.0 REQUIRED)
 target_link_libraries(volatility_breakout nlohmann_json::nlohmann_json)

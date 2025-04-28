@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/binance_exchange.cpp" "CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.o.d"
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/exchange.cpp" "CMakeFiles/volatility_breakout.dir/src/exchange.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/exchange.cpp.o.d"
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/main.cpp" "CMakeFiles/volatility_breakout.dir/src/main.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/main.cpp.o.d"
+  "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/okx_exchange.cpp" "CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o.d"
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/position.cpp" "CMakeFiles/volatility_breakout.dir/src/position.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/position.cpp.o.d"
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/volatility_breakout.cpp" "CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o.d"
   )

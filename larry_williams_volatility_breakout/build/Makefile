@@ -270,6 +270,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/okx_exchange.o: src/okx_exchange.cpp.o
+.PHONY : src/okx_exchange.o
+
+# target to build an object file
+src/okx_exchange.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o
+.PHONY : src/okx_exchange.cpp.o
+
+src/okx_exchange.i: src/okx_exchange.cpp.i
+.PHONY : src/okx_exchange.i
+
+# target to preprocess a source file
+src/okx_exchange.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.i
+.PHONY : src/okx_exchange.cpp.i
+
+src/okx_exchange.s: src/okx_exchange.cpp.s
+.PHONY : src/okx_exchange.s
+
+# target to generate assembly for a file
+src/okx_exchange.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.s
+.PHONY : src/okx_exchange.cpp.s
+
 src/position.o: src/position.cpp.o
 .PHONY : src/position.o
 
@@ -343,6 +367,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/okx_exchange.o"
+	@echo "... src/okx_exchange.i"
+	@echo "... src/okx_exchange.s"
 	@echo "... src/position.o"
 	@echo "... src/position.i"
 	@echo "... src/position.s"

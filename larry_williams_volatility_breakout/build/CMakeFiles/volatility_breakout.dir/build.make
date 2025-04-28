@@ -125,10 +125,24 @@ CMakeFiles/volatility_breakout.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/volatility_breakout.dir/src/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/main.cpp -o CMakeFiles/volatility_breakout.dir/src/main.cpp.s
 
+CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: CMakeFiles/volatility_breakout.dir/flags.make
+CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/okx_exchange.cpp
+CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: CMakeFiles/volatility_breakout.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o -MF CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o.d -o CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o -c /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/okx_exchange.cpp
+
+CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/okx_exchange.cpp > CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.i
+
+CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/okx_exchange.cpp -o CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.s
+
 CMakeFiles/volatility_breakout.dir/src/position.cpp.o: CMakeFiles/volatility_breakout.dir/flags.make
 CMakeFiles/volatility_breakout.dir/src/position.cpp.o: /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/position.cpp
 CMakeFiles/volatility_breakout.dir/src/position.cpp.o: CMakeFiles/volatility_breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/volatility_breakout.dir/src/position.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/volatility_breakout.dir/src/position.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/volatility_breakout.dir/src/position.cpp.o -MF CMakeFiles/volatility_breakout.dir/src/position.cpp.o.d -o CMakeFiles/volatility_breakout.dir/src/position.cpp.o -c /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/position.cpp
 
 CMakeFiles/volatility_breakout.dir/src/position.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/volatility_breakout.dir/src/position.cpp.s: cmake_force
 CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o: CMakeFiles/volatility_breakout.dir/flags.make
 CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o: /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/volatility_breakout.cpp
 CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o: CMakeFiles/volatility_breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o -MF CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o.d -o CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o -c /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/volatility_breakout.cpp
 
 CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.i: cmake_force
@@ -159,6 +173,7 @@ volatility_breakout_OBJECTS = \
 "CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.o" \
 "CMakeFiles/volatility_breakout.dir/src/exchange.cpp.o" \
 "CMakeFiles/volatility_breakout.dir/src/main.cpp.o" \
+"CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o" \
 "CMakeFiles/volatility_breakout.dir/src/position.cpp.o" \
 "CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o"
 
@@ -169,12 +184,15 @@ volatility_breakout: CMakeFiles/volatility_breakout.dir/src/backtest_engine.cpp.
 volatility_breakout: CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.o
 volatility_breakout: CMakeFiles/volatility_breakout.dir/src/exchange.cpp.o
 volatility_breakout: CMakeFiles/volatility_breakout.dir/src/main.cpp.o
+volatility_breakout: CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o
 volatility_breakout: CMakeFiles/volatility_breakout.dir/src/position.cpp.o
 volatility_breakout: CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o
 volatility_breakout: CMakeFiles/volatility_breakout.dir/build.make
 volatility_breakout: /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/lib/libcurl.tbd
+volatility_breakout: /opt/homebrew/lib/libssl.dylib
+volatility_breakout: /opt/homebrew/lib/libcrypto.dylib
 volatility_breakout: CMakeFiles/volatility_breakout.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable volatility_breakout"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable volatility_breakout"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/volatility_breakout.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
