@@ -1,14 +1,21 @@
-#include "../include/binance_exchange.h"
-#include <iostream> 
+#include "binance_exchange.h"
+#include "websocket_client.h"
+#include <iostream>
 #include <sstream>
+#include <iomanip>
+#include <vector>
+#include <chrono>
+#include <openssl/hmac.h>
 #include <nlohmann/json.hpp>
+#include <algorithm>
 
 using json =  nlohmann::json;
 
-BinanceExchange::BinanceExchange() : curl(nullptr)
+BinanceExchange::BinanceExchange() : curl(nullptr), websocket(nullptr)
 {
     name = "Binance";
     connected = false;
+
     curl_global_init(CURL_GLOBAL_ALL);
     curl = curl_easy_init(); 
     if(!curl)
@@ -18,11 +25,120 @@ BinanceExchange::BinanceExchange() : curl(nullptr)
 }
 BinanceExchange::~BinanceExchange()
 {
+    disconnectWebSocket();
     if(curl)
     {
         curl_easy_cleanup(curl);
     }
     curl_global_cleanup();
+}
+// Implement or update WebSocket methods
+bool BinanceExchange::connectWebSocket(const std::string& symbol, const std::string& channel) {
+    // Create WebSocket client if needed
+    if (!websocket) {
+        websocket = std::make_unique<WebSocketClient>();
+        
+        if (!websocket->initialize()) {
+            std::cerr << "Failed to initialize WebSocket client" << std::endl;
+            return false;
+        }
+        
+        // Set callbacks
+        websocket->setMessageCallback([this](const std::string& msg) {
+            handleWebSocketMessage(msg);
+        });
+        
+        websocket->setConnectionCallback([this](bool connected) {
+            std::cout << "Binance WebSocket " << (connected ? "connected" : "disconnected") << std::endl;
+        });
+        
+        websocket->setErrorCallback([](const std::string& error) {
+            std::cerr << "Binance WebSocket error: " << error << std::endl;
+        });
+    }
+    
+    // Convert symbol to lowercase (Binance requirement)
+    std::string lowercaseSymbol = symbol;
+    std::transform(lowercaseSymbol.begin(), lowercaseSymbol.end(), lowercaseSymbol.begin(), ::tolower);
+    
+    // Remove any special characters like "/"
+    lowercaseSymbol.erase(std::remove(lowercaseSymbol.begin(), lowercaseSymbol.end(), '/'), lowercaseSymbol.end());
+    lowercaseSymbol.erase(std::remove(lowercaseSymbol.begin(), lowercaseSymbol.end(), '-'), lowercaseSymbol.end());
+    
+    // Build WebSocket URL based on the channel
+    std::string wsUrl;
+    
+    if (channel == "ticker") {
+        wsUrl = "wss://stream.binance.com:9443/ws/" + lowercaseSymbol + "@ticker";
+    } else if (channel == "trade") {
+        wsUrl = "wss://stream.binance.com:9443/ws/" + lowercaseSymbol + "@trade";
+    } else if (channel.find("kline_") == 0) {
+        std::string interval = channel.substr(6); // Extract interval part
+        wsUrl = "wss://stream.binance.com:9443/ws/" + lowercaseSymbol + "@kline_" + interval;
+    } else {
+        std::cerr << "Unsupported channel: " << channel << std::endl;
+        return false;
+    }
+    
+    std::cout << "Connecting to Binance WebSocket URL: " << wsUrl << std::endl;
+    
+    // Connect to WebSocket
+    return websocket->connect(wsUrl);
+}
+
+void BinanceExchange::disconnectWebSocket() {
+    if (websocket) {
+        websocket->disconnect();
+    }
+}
+
+bool BinanceExchange::isWebSocketConnected() const {
+    return websocket && websocket->isConnected();
+}
+void BinanceExchange::setRealTimePriceCallback(std::function<void(const std::string&, double)> callback) {
+    priceUpdateCallback = callback;
+}
+
+void BinanceExchange::setRealTimeCandleCallback(std::function<void(const OHLCV&)> callback) {
+    candleUpdateCallback = callback;
+}
+
+void BinanceExchange::handleWebSocketMessage(const std::string& message) {
+    try {
+        json data = json::parse(message);
+        
+        // Process ticker message
+        if (data.contains("e") && data["e"] == "24hrTicker") {
+            if (priceUpdateCallback && data.contains("s") && data.contains("c")) {
+                std::string symbol = data["s"];
+                double price = std::stod(data["c"].get<std::string>());
+                priceUpdateCallback(symbol, price);
+            }
+        }
+        // Process kline/candlestick message
+        else if (data.contains("e") && data["e"] == "kline" && data.contains("k")) {
+            if (candleUpdateCallback) {
+                json k = data["k"];
+                
+                OHLCV candle;
+                candle.timestamp = k["t"].get<long long>() / 1000; // Convert from ms to s
+                candle.open = std::stod(k["o"].get<std::string>());
+                candle.high = std::stod(k["h"].get<std::string>());
+                candle.low = std::stod(k["l"].get<std::string>());
+                candle.close = std::stod(k["c"].get<std::string>());
+                candle.volume = std::stod(k["v"].get<std::string>());
+                
+                candleUpdateCallback(candle);
+            }
+        }
+        // Process trade message
+        else if (data.contains("e") && data["e"] == "trade") {
+            // Handle trade updates if needed
+            std::cout << "Trade update received (not processed): " << message << std::endl;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Error parsing Binance WebSocket message: " << e.what() << std::endl;
+    }
 }
 bool BinanceExchange::initialize(const std::string& api_key, const std::string& api_secret)
 {

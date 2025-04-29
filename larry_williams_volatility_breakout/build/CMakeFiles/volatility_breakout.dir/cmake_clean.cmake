@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/volatility_breakout.dir/src/position.cpp.o.d"
   "CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o"
   "CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o.d"
+  "CMakeFiles/volatility_breakout.dir/src/websocket_client.cpp.o"
+  "CMakeFiles/volatility_breakout.dir/src/websocket_client.cpp.o.d"
   "volatility_breakout"
   "volatility_breakout.pdb"
 )

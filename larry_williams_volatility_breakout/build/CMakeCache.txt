@@ -264,6 +264,9 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
 
+//The directory containing a CMake configuration file for libwebsockets.
+libwebsockets_DIR:PATH=/opt/homebrew/lib/cmake/libwebsockets
+
 //The directory containing a CMake configuration file for nlohmann_json.
 nlohmann_json_DIR:PATH=/opt/homebrew/share/cmake/nlohmann_json
 

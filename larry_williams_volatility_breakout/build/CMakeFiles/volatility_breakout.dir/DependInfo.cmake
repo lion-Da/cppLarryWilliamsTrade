@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/okx_exchange.cpp" "CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o.d"
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/position.cpp" "CMakeFiles/volatility_breakout.dir/src/position.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/position.cpp.o.d"
   "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/volatility_breakout.cpp" "CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o.d"
+  "/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/websocket_client.cpp" "CMakeFiles/volatility_breakout.dir/src/websocket_client.cpp.o" "gcc" "CMakeFiles/volatility_breakout.dir/src/websocket_client.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

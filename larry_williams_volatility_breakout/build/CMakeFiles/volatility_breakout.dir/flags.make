@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include -isystem /opt/homebrew/include
+CXX_INCLUDES = -I/Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include -I/opt/homebrew/lib/cmake/libwebsockets/../../../include -isystem /opt/homebrew/include
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
 

@@ -342,6 +342,30 @@ src/volatility_breakout.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.s
 .PHONY : src/volatility_breakout.cpp.s
 
+src/websocket_client.o: src/websocket_client.cpp.o
+.PHONY : src/websocket_client.o
+
+# target to build an object file
+src/websocket_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/websocket_client.cpp.o
+.PHONY : src/websocket_client.cpp.o
+
+src/websocket_client.i: src/websocket_client.cpp.i
+.PHONY : src/websocket_client.i
+
+# target to preprocess a source file
+src/websocket_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/websocket_client.cpp.i
+.PHONY : src/websocket_client.cpp.i
+
+src/websocket_client.s: src/websocket_client.cpp.s
+.PHONY : src/websocket_client.s
+
+# target to generate assembly for a file
+src/websocket_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/websocket_client.cpp.s
+.PHONY : src/websocket_client.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -376,6 +400,9 @@ help:
 	@echo "... src/volatility_breakout.o"
 	@echo "... src/volatility_breakout.i"
 	@echo "... src/volatility_breakout.s"
+	@echo "... src/websocket_client.o"
+	@echo "... src/websocket_client.i"
+	@echo "... src/websocket_client.s"
 .PHONY : help
 
 

@@ -5,6 +5,7 @@
 #include <curl/curl.h>
 #include <openssl/hmac.h>
 #include <ctime>
+#include "websocket_client.h"
 class OKXExchange : public Exchange
 {
     public:
@@ -23,6 +24,19 @@ class OKXExchange : public Exchange
         
         // Set passphrase (OKX specific)
         void setPassphrase(const std::string& passphrase);
+        bool connectWebSocket(const std::string& symbol, const std::string& channel = "tickers");
+        void disconnectWebSocket();
+        bool isWebSocketConnected() const;
+        
+        // Set callbacks for real-time data
+        void setRealTimePriceCallback(std::function<void(const std::string&, double)> callback);
+        void setRealTimeCandleCallback(std::function<void(const OHLCV&)> callback);
+        
+        // WebSocket message handler
+        void handleWebSocketMessage(const std::string& message);
+        
+        // WebSocket login for private channels (authenticated)
+        bool webSocketLogin();
     private:
     CURL* curl;
     std::string passphrase; // OKX requires a passphrase in addition to key/secret
@@ -42,6 +56,9 @@ class OKXExchange : public Exchange
     
     // Get timestamp in ISO8601 format for OKX API
     std::string getTimestamp();
+    std::unique_ptr<WebSocketClient> websocket;
+    std::function<void(const std::string&, double)> priceUpdateCallback;
+    std::function<void(const OHLCV&)> candleUpdateCallback;
 };
 
 

@@ -832,11 +832,22 @@ CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: \
   /opt/homebrew/include/openssl/asn1.h \
   /opt/homebrew/include/openssl/asn1err.h \
   /opt/homebrew/include/openssl/objectserr.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iostream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/istream \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/websocket_client.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/thread \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__thread/formatter.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__thread/jthread.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__stop_token/stop_source.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__stop_token/intrusive_shared_ptr.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__stop_token/stop_state.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__stop_token/atomic_unique_lock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__stop_token/intrusive_list_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__stop_token/stop_token.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__thread/thread.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__ostream/basic_ostream.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__type_traits/is_char_like_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/format \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/queue \
@@ -847,11 +858,144 @@ CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/unistd.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/sstream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iomanip \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__thread/this_thread.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/chrono \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__chrono/file_clock.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/forward_list \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/lws_config.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/unistd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/select.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/gethostuuid.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/poll.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/poll.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/netdb.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/netinet/in.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/netinet6/in6.h \
+  /opt/homebrew/include/openssl/ssl.h \
+  /opt/homebrew/include/openssl/e_ostime.h \
+  /opt/homebrew/include/openssl/comp.h \
+  /opt/homebrew/include/openssl/comperr.h \
+  /opt/homebrew/include/openssl/x509.h \
+  /opt/homebrew/include/openssl/buffer.h \
+  /opt/homebrew/include/openssl/buffererr.h \
+  /opt/homebrew/include/openssl/ec.h \
+  /opt/homebrew/include/openssl/ecerr.h \
+  /opt/homebrew/include/openssl/rsa.h \
+  /opt/homebrew/include/openssl/rsaerr.h \
+  /opt/homebrew/include/openssl/dsa.h /opt/homebrew/include/openssl/dh.h \
+  /opt/homebrew/include/openssl/dherr.h \
+  /opt/homebrew/include/openssl/dsaerr.h \
+  /opt/homebrew/include/openssl/sha.h \
+  /opt/homebrew/include/openssl/x509err.h \
+  /opt/homebrew/include/openssl/x509_vfy.h \
+  /opt/homebrew/include/openssl/lhash.h \
+  /opt/homebrew/include/openssl/pkcs7.h \
+  /opt/homebrew/include/openssl/pkcs7err.h \
+  /opt/homebrew/include/openssl/http.h \
+  /opt/homebrew/include/openssl/conf.h \
+  /opt/homebrew/include/openssl/conferr.h \
+  /opt/homebrew/include/openssl/conftypes.h \
+  /opt/homebrew/include/openssl/pem.h \
+  /opt/homebrew/include/openssl/pemerr.h \
+  /opt/homebrew/include/openssl/async.h \
+  /opt/homebrew/include/openssl/asyncerr.h \
+  /opt/homebrew/include/openssl/ct.h \
+  /opt/homebrew/include/openssl/cterr.h \
+  /opt/homebrew/include/openssl/sslerr.h \
+  /opt/homebrew/include/openssl/sslerr_legacy.h \
+  /opt/homebrew/include/openssl/prov_ssl.h \
+  /opt/homebrew/include/openssl/ssl2.h \
+  /opt/homebrew/include/openssl/ssl3.h \
+  /opt/homebrew/include/openssl/tls1.h \
+  /opt/homebrew/include/openssl/dtls1.h \
+  /opt/homebrew/include/openssl/srtp.h \
+  /opt/homebrew/include/openssl/quic.h \
+  /opt/homebrew/include/openssl/err.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-logs.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-dll2.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-map.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-fault-injection.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-timeout-timer.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-cache-ttl.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-smd.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-state.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-retry.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-adopt.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-network-helper.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-metrics.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-system.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-ws-close.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-callbacks.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-ws-state.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-ws-ext.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-protocols-plugins.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-context-vhost.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-conmon.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-client.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-http.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-spa.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-purify.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-misc.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-dsh.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-service.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-write.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-writeable.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-ring.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-sha1-base64.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-x509.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-cgi.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-vfs.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-gencrypto.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-lejp.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-lecp.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-cose.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-struct.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-threadpool.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-tokenize.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-lwsac.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-fts.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-diskcache.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-sequencer.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-secure-streams.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-secure-streams-policy.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-secure-streams-client.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/abstract/abstract.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/abstract/protocols.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/abstract/protocols/smtp.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/abstract/transports.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/abstract/transports/raw-skt.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/abstract/transports/unit-test.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-test-sequencer.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-async-dns.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-tls-sessions.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-genhash.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-genrsa.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-genaes.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-genec.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-jwk.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-jose.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-jws.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-jwe.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-eventlib-exports.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-i2c.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-spi.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-gpio.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-bb-i2c.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-bb-spi.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-button.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-led.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-pwm.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-display.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-ssd1306-i2c.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-ili9341-spi.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-settings.h \
+  /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-netdev.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iostream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iomanip \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/websocket_client.h \
   /opt/homebrew/include/nlohmann/json.hpp \
   /opt/homebrew/include/nlohmann/adl_serializer.hpp \
   /opt/homebrew/include/nlohmann/detail/abi_macros.hpp \
