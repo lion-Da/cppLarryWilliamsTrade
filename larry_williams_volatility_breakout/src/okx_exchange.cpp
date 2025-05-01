@@ -90,7 +90,7 @@ bool OKXExchange::connectWebSocket(const std::string& symbol, const std::string&
     }
     
     // OKX WebSocket URL
-    std::string wsUrl = "wss://ws.okx.com:8443/ws/v5/business";
+    std::string wsUrl = "wss://ws.okx.com:8443/ws/v5/public";
     
     // Connect to WebSocket
     return websocket->connect(wsUrl);
