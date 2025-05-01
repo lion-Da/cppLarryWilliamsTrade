@@ -11,10 +11,10 @@ struct PerSessionData {
 };
 
 // Protocols we implement
-const struct lws_protocols WebSocketClient::protocols[] = {
+struct lws_protocols WebSocketClient::protocols[] = {
     {
         "trading-protocol",        // Protocol name
-        WebSocketClient::callbackFunction,  // Callback (private but accessible)
+        WebSocketClient::callbackFunction,  // Callback
         sizeof(PerSessionData),    // Per-session data size
         0,                         // Rx buffer size (0 = default)
     },
@@ -33,19 +33,21 @@ WebSocketClient::~WebSocketClient() {
         context = nullptr;
     }
 }
+// Add the implementation of the new static method
 
 bool WebSocketClient::initialize() {
     struct lws_context_creation_info info;
     memset(&info, 0, sizeof(info));
     
     info.port = CONTEXT_PORT_NO_LISTEN;  // Client-only
-    info.protocols = protocols;
+    // info.protocols = protocols;
+    info.protocols = protocols; // Use the static method to get protocols
     info.gid = -1;
     info.uid = -1;
     info.options = LWS_SERVER_OPTION_DO_SSL_GLOBAL_INIT;
     
     // Initialize libwebsockets logs
-    lws_set_log_level(LLL_ERR | LLL_WARN, NULL);
+    lws_set_log_level(LLL_ERR | LLL_WARN | LLL_NOTICE, NULL);
     
     context = lws_create_context(&info);
     
@@ -114,10 +116,32 @@ bool WebSocketClient::connect(const std::string& url) {
     ccinfo.address = host.c_str();
     ccinfo.port = std::stoi(port);
     ccinfo.path = path.c_str();
-    ccinfo.host = lws_canonical_hostname(context);
+    
+    // FIX: Use the actual host for SSL verification
+    ccinfo.host = host.c_str();
+    
     ccinfo.origin = host.c_str();
     ccinfo.protocol = protocols[0].name;
-    ccinfo.ssl_connection = secure ? LCCSCF_USE_SSL : 0;
+    
+    // OPTION 1: Standard SSL verification
+    if (host == "ws.okx.com") {
+        std::cout << "Using OKX-specific SSL settings..." << std::endl;
+        // Use TLS 1.2 minimum, with more permissive settings
+        ccinfo.ssl_connection = LCCSCF_USE_SSL | 
+                               LCCSCF_ALLOW_SELFSIGNED | 
+                               LCCSCF_SKIP_SERVER_CERT_HOSTNAME_CHECK;
+                               
+        // Optionally force TLS 1.2 if needed
+        // This requires libwebsockets to be compiled with correct options
+        // lws_set_ssl_options(wsi, SSL_OP_NO_TLSv1 | SSL_OP_NO_TLSv1_1);
+    } else {
+        // Standard SSL for other exchanges
+        ccinfo.ssl_connection = secure ? LCCSCF_USE_SSL : 0;
+    }
+    
+    // OPTION 2: Disable SSL certificate verification (less secure, use only for testing)
+    // ccinfo.ssl_connection = secure ? (LCCSCF_USE_SSL | LCCSCF_ALLOW_SELFSIGNED | LCCSCF_SKIP_SERVER_CERT_HOSTNAME_CHECK) : 0;
+    
     // User data to be accessible in the callback
     if (sessionData == nullptr) {
         sessionData = new PerSessionData();

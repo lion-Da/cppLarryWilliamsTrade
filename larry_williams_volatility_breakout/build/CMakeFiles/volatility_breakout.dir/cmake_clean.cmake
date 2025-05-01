@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/volatility_breakout.dir/src/backtest_engine.cpp.o.d"
   "CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.o"
   "CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.o.d"
+  "CMakeFiles/volatility_breakout.dir/src/env_loader.cpp.o"
+  "CMakeFiles/volatility_breakout.dir/src/env_loader.cpp.o.d"
   "CMakeFiles/volatility_breakout.dir/src/exchange.cpp.o"
   "CMakeFiles/volatility_breakout.dir/src/exchange.cpp.o.d"
   "CMakeFiles/volatility_breakout.dir/src/main.cpp.o"

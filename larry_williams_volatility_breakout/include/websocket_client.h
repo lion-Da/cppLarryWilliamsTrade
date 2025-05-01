@@ -52,7 +52,10 @@ public:
     // Get connection status
     bool getConnectionStatus() const;
     void setConnectionStatus(bool status);
-    
+    static int callbackFunction(struct lws* wsi, enum lws_callback_reasons reason,
+        void* user, void* in, size_t len);
+    // Static callback for libwebsockets
+    static struct lws_protocols protocols[];
 private:
     // libwebsockets context and connection
     lws_context* context;
@@ -77,11 +80,6 @@ private:
     
     // Event loop
     void eventLoop();
-    
-    // Static callback for libwebsockets
-    static int callbackFunction(struct lws* wsi, enum lws_callback_reasons reason,
-                                void* user, void* in, size_t len);
-    static const struct lws_protocols protocols[];
     
     // Pointer to the session data
     PerSessionData* sessionData;

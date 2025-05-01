@@ -1,4 +1,4 @@
-#include "../include/okx_exchange.h"
+#include "okx_exchange.h"
 #include <iostream>
 #include <sstream>
 #include <iomanip>
@@ -7,11 +7,14 @@
 #include "websocket_client.h"
 #include <algorithm>
 #include <nlohmann/json.hpp>
-
+#include "env_loader.h"
 using json = nlohmann::json;
 
 OKXExchange::OKXExchange(): curl(nullptr), websocket(nullptr)
 {
+    apiKey = EnvLoader::get("OKX_API_KEY");
+    apiSecret = EnvLoader::get("OKX_API_SECRET");
+    passphrase = EnvLoader::get("OKX_PASSPHRASE");
     name = "OKX";
     connected = false;
     curl_global_init(CURL_GLOBAL_ALL);
@@ -87,7 +90,7 @@ bool OKXExchange::connectWebSocket(const std::string& symbol, const std::string&
     }
     
     // OKX WebSocket URL
-    std::string wsUrl = "wss://ws.okx.com:8443/ws/v5/public";
+    std::string wsUrl = "wss://ws.okx.com:8443/ws/v5/business";
     
     // Connect to WebSocket
     return websocket->connect(wsUrl);

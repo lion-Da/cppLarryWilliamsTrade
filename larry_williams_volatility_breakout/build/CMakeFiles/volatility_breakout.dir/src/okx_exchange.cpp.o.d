@@ -1,7 +1,7 @@
 CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: \
   /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/okx_exchange.cpp \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/okx_exchange.h \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/exchange.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/okx_exchange.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/exchange.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -782,7 +782,7 @@ CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__functional/default_searcher.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/data_types.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/data_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/curl/curl.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/curl/curlver.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/curl/system.h \
@@ -832,7 +832,7 @@ CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: \
   /opt/homebrew/include/openssl/asn1.h \
   /opt/homebrew/include/openssl/asn1err.h \
   /opt/homebrew/include/openssl/objectserr.h \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/websocket_client.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/websocket_client.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/thread \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__thread/formatter.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__thread/jthread.h \
@@ -995,7 +995,6 @@ CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: \
   /opt/homebrew/lib/cmake/libwebsockets/../../../include/libwebsockets/lws-netdev.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iomanip \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/websocket_client.h \
   /opt/homebrew/include/nlohmann/json.hpp \
   /opt/homebrew/include/nlohmann/adl_serializer.hpp \
   /opt/homebrew/include/nlohmann/detail/abi_macros.hpp \
@@ -1080,4 +1079,5 @@ CMakeFiles/volatility_breakout.dir/src/okx_exchange.cpp.o: \
   /opt/homebrew/include/nlohmann/ordered_map.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/any \
   /opt/homebrew/include/nlohmann/detail/macro_unscope.hpp \
-  /opt/homebrew/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+  /opt/homebrew/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/env_loader.h

@@ -222,6 +222,30 @@ src/binance_exchange.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.s
 .PHONY : src/binance_exchange.cpp.s
 
+src/env_loader.o: src/env_loader.cpp.o
+.PHONY : src/env_loader.o
+
+# target to build an object file
+src/env_loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/env_loader.cpp.o
+.PHONY : src/env_loader.cpp.o
+
+src/env_loader.i: src/env_loader.cpp.i
+.PHONY : src/env_loader.i
+
+# target to preprocess a source file
+src/env_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/env_loader.cpp.i
+.PHONY : src/env_loader.cpp.i
+
+src/env_loader.s: src/env_loader.cpp.s
+.PHONY : src/env_loader.s
+
+# target to generate assembly for a file
+src/env_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/volatility_breakout.dir/build.make CMakeFiles/volatility_breakout.dir/src/env_loader.cpp.s
+.PHONY : src/env_loader.cpp.s
+
 src/exchange.o: src/exchange.cpp.o
 .PHONY : src/exchange.o
 
@@ -385,6 +409,9 @@ help:
 	@echo "... src/binance_exchange.o"
 	@echo "... src/binance_exchange.i"
 	@echo "... src/binance_exchange.s"
+	@echo "... src/env_loader.o"
+	@echo "... src/env_loader.i"
+	@echo "... src/env_loader.s"
 	@echo "... src/exchange.o"
 	@echo "... src/exchange.i"
 	@echo "... src/exchange.s"

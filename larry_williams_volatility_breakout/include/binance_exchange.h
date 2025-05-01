@@ -42,7 +42,8 @@ public:
     
 private:
     CURL* curl;
-    
+    std::string apiKey;
+    std::string apiSecret;
     // Implementation of helper methods
     std::string buildApiUrl(const std::string& endpoint) override;
     std::string signRequest(const std::string& data) override;

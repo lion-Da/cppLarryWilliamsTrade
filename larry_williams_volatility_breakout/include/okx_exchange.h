@@ -6,6 +6,8 @@
 #include <openssl/hmac.h>
 #include <ctime>
 #include "websocket_client.h"
+#include <map>
+#include <vector>
 class OKXExchange : public Exchange
 {
     public:
@@ -40,7 +42,8 @@ class OKXExchange : public Exchange
     private:
     CURL* curl;
     std::string passphrase; // OKX requires a passphrase in addition to key/secret
-    
+    std::string apiKey;
+    std::string apiSecret;
     // Implementation of helper methods
     std::string buildApiUrl(const std::string& endpoint) override;
     std::string signRequest(const std::string& data) override;

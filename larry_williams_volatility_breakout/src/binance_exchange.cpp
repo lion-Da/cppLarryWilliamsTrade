@@ -8,11 +8,16 @@
 #include <openssl/hmac.h>
 #include <nlohmann/json.hpp>
 #include <algorithm>
-
+#include "env_loader.h"
 using json =  nlohmann::json;
 
 BinanceExchange::BinanceExchange() : curl(nullptr), websocket(nullptr)
 {
+    apiKey = EnvLoader::get("BINANCE_API_KEY");
+    apiSecret = EnvLoader::get("BINANCE_API_SECRET");
+    if (apiKey.empty() || apiSecret.empty()) {
+        std::cerr << "Warning: Binance API credentials not found in environment variables" << std::endl;
+    }
     name = "Binance";
     connected = false;
 
@@ -339,7 +344,30 @@ std::string BinanceExchange::signRequest(const std::string& data) {
     //TODO: Implement HMAC-SHA256 signing
     // This is a simplified version - in production, implement proper HMAC-SHA256
     // For learning purposes, this returns a placeholder
-    return "signature_placeholder";
+    const std::string& apiSecret = this->apiSecret;
+    
+    // Output buffer for the HMAC result
+    unsigned char hash[EVP_MAX_MD_SIZE];
+    unsigned int hashLen;
+    
+    // Calculate HMAC-SHA256
+    HMAC(EVP_sha256(), 
+         apiSecret.c_str(),                // Secret key
+         apiSecret.length(),               // Length of the secret key
+         reinterpret_cast<const unsigned char*>(data.c_str()), // Data to sign
+         data.length(),                    // Length of data
+         hash,                             // Output hash
+         &hashLen);                        // Output hash length
+    
+    // Convert the binary hash to a hex string
+    std::stringstream ss;
+    ss << std::hex << std::setfill('0');
+    
+    for (unsigned int i = 0; i < hashLen; i++) {
+        ss << std::setw(2) << static_cast<unsigned int>(hash[i]);
+    }
+    
+    return ss.str();
 }
 size_t BinanceExchange::WriteCallBack(void* contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size * nmemb;

@@ -1079,4 +1079,5 @@ CMakeFiles/volatility_breakout.dir/src/binance_exchange.cpp.o: \
   /opt/homebrew/include/nlohmann/ordered_map.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/any \
   /opt/homebrew/include/nlohmann/detail/macro_unscope.hpp \
-  /opt/homebrew/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+  /opt/homebrew/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/env_loader.h
