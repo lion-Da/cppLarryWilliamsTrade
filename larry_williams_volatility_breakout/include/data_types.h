@@ -10,7 +10,7 @@ struct OHLCV{
     double low;
     double close;
     double volume;
-
+    std::string symbol; // Optional: to identify the trading pair
     double calculateRange() const 
     {
         return high - low; 

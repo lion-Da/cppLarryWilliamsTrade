@@ -1,7 +1,7 @@
 CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o: \
   /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/volatility_breakout.cpp \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/volatility_breakout.h \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/strategy.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/volatility_breakout.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/strategy.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -782,8 +782,8 @@ CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__functional/default_searcher.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/exchange.h \
-  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/src/../include/data_types.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/exchange.h \
+  /Users/jinhongmac/larrywilliamTrading/larry_williams_volatility_breakout/include/data_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__ostream/basic_ostream.h \
@@ -798,4 +798,6 @@ CMakeFiles/volatility_breakout.dir/src/volatility_breakout.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/stack \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/print \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/unistd.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/unistd.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/sstream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/iomanip
