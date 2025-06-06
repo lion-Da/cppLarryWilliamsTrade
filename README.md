@@ -23,3 +23,9 @@ sudo make install
 cd cppLarryWilliamsTrade/project && mkdir build && cd build 
 cmake .. 
 make -j${nproc}
+
+
+# window构建
+1. 切换win分支
+2. 进入project下 新建build 目录 进入build目录 cmd 使用vs带的cmake 生成sln cmake .. -G "Visual Studio 17 2022"
+3. 调整输入引用、库、链接库
