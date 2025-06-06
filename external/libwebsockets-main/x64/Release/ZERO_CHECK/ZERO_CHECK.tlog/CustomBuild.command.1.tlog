@@ -1,0 +1,10 @@
+^F:\PROJECT\CPPLARRYWILLIAMSTRADE\EXTERNAL\LIBWEBSOCKETS-MAIN\CMAKEFILES\1CFC4790227E6035DB7BA58DC1ED6585\GENERATE.STAMP.RULE
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/project/cppLarryWilliamsTrade/external/libwebsockets-main -BF:/project/cppLarryWilliamsTrade/external/libwebsockets-main --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

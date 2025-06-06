@@ -1,0 +1,2 @@
+﻿  Creating build include dir
+D:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(254,5): warning MSB8065: 项“F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lws_config.h”的自定义生成成功，但尚未创建指定的输出“f:\project\cpplarrywilliamstrade\external\libwebsockets-main\include\libwebsockets”。这可能会导致增量生成无法正常工作。

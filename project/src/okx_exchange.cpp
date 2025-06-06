@@ -12,11 +12,16 @@ using json = nlohmann::json;
 
 OKXExchange::OKXExchange(): curl(nullptr), websocket(nullptr)
 {
-    apiKey = EnvLoader::get("OKX_API_KEY");
-    apiSecret = EnvLoader::get("OKX_API_SECRET");
-    passphrase = EnvLoader::get("OKX_PASSPHRASE");
-    name = "OKX";
-    connected = false;
+	// apiKey = EnvLoader::get("OKX_API_KEY");
+	// apiSecret = EnvLoader::get("OKX_API_SECRET");
+	// passphrase = EnvLoader::get("OKX_PASSPHRASE");
+	// name = "OKX";
+
+	apiKey = "0a706388-1dcb-4155-81af-77d154fa24c7";//EnvLoader::get("OKX_API_KEY");
+	apiSecret = "5A6ED1529714D6BFE30D19B8E5412626";//EnvLoader::get("OKX_API_SECRET");
+	passphrase = "1lu29eGBD!"; //EnvLoader::get("OKX_PASSPHRASE");
+	name = "test2";
+	connected = false;
     curl_global_init(CURL_GLOBAL_ALL);
     curl = curl_easy_init();
     
@@ -534,7 +539,7 @@ std::string OKXExchange::formatSymbol(const std::string& symbol) {
 
 std::string OKXExchange::generateHMAC(const std::string& key, const std::string& data) {
     unsigned char* digest = HMAC(EVP_sha256(), 
-                                key.c_str(), key.length(),
+                                key.c_str(), static_cast<int>(key.length()),
                                 reinterpret_cast<const unsigned char*>(data.c_str()), data.length(),
                                 NULL, NULL);
     
@@ -565,7 +570,7 @@ size_t OKXExchange::WriteCallback(void* contents, size_t size, size_t nmemb, std
     try {
         s->append((char*)contents, newLength);
         return newLength;
-    } catch (const std::bad_alloc& e) {
+    } catch (...) {
         // Handle memory problem
         return 0;
     }
@@ -585,7 +590,9 @@ std::string OKXExchange::makeRequest(const std::string& url, const std::string& 
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &responseString);
-    
+	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0);
+	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0);
+
     struct curl_slist* headers = NULL;
     
     // For authenticated requests

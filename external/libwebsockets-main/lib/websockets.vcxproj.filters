@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-fds.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-file.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-pipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-plugins.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-service.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\windows-sockets.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\win32port\win32helpers\gettimeofday.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\tls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\tls-network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\tls-sessions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\openssl-tls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\openssl-x509.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\openssl-ssl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\openssl-session.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\lws-genhash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\lws-genrsa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\lws-genaes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\lws-genec-common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\lws-genec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\lws-gencrypto.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\tls-server.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\openssl-server.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\tls-client.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\openssl\openssl-client.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\lws-gencrypto-common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\lws_dll2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\buflist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\context.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\lws_map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\libwebsockets.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\logs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\vfs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\base64-decode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\prng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\lws-ring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\cache-ttl\lws-cache-ttl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\cache-ttl\heap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\cache-ttl\file.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\upng-gzip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\upng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\jpeg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo-rect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo-font-mcufont.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo-text.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo-ss.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo-png.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo-jpeg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dlo\dlo-lhp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\jrpc\jrpc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\dir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\lwsac\lwsac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\lwsac\cached-file.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\sha-1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\lejp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\lhp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\lhp-ss.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\system.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\dummy-callback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\output.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\close.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\vhost.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\pollfd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\service.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\sorted-usec-list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\wsi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\wsi-timeout.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\adopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\pipe\ops-pipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\state.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\wol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\client\client.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\client\connect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\client\connect2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\client\connect3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\client\connect4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\client\sort-dns.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\client\conmon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\header.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\date.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\parsers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\server\server.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\server\lws-spa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\cookie.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\server\lejp-conf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\ops-h1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\http2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\hpack.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\ops-h2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\ops-ws.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\client-ws.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\client-parser-ws.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\server-ws.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\ops-raw-skt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\ops-raw-file.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\ops-listen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\client\client-http.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\poll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\secure-streams.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\policy-common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\system\captive-portal-detect\captive-portal-detect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\protocols\ss-raw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\policy-json.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\system\fetch-policy\fetch-policy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\protocols\ss-h1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\protocols\ss-h2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\protocols\ss-ws.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\system\auth-api.amazon.com\auth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{87ED9714-9EE8-3188-B2C4-FC26F844AD37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

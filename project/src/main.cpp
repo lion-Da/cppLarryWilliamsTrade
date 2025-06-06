@@ -13,7 +13,7 @@
 #include "backtest_engine.h"
 #include "websocket_client.h"
 #include "okx_exchange.h"
-
+#include <algorithm>
 // Global flag for termination
 volatile sig_atomic_t g_running = 1;
 

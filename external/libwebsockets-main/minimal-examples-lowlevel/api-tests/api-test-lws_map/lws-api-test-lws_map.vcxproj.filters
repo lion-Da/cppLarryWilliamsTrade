@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\minimal-examples-lowlevel\api-tests\api-test-lws_map\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\minimal-examples-lowlevel\api-tests\api-test-lws_map\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{87ED9714-9EE8-3188-B2C4-FC26F844AD37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

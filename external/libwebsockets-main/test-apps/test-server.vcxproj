@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{18E75B98-FE21-332C-BE96-6B493D2E28B8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>test-server</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">test-server.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">libwebsockets-test-server</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">test-server.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">libwebsockets-test-server</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">test-server.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">libwebsockets-test-server</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">test-server.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">libwebsockets-test-server</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>5105</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;INSTALL_DATADIR="C:/Program Files (x86)/libwebsockets/share";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;INSTALL_DATADIR=\"C:/Program Files (x86)/libwebsockets/share\";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>													</Message>
+      <Command>setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.key.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/favicon.ico F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/leaf.jpg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide-uncompressed.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/libwebsockets.org-logo.svg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/http2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/wss-over-h2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/lws-common.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.html F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.css F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\Debug\websockets_static.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;D:\openssl\lib\libssl.lib;D:\openssl\lib\libcrypto.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/lib/Debug/libwebsockets-test-server.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/libwebsockets-test-server.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>5105</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INSTALL_DATADIR="C:/Program Files (x86)/libwebsockets/share";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INSTALL_DATADIR=\"C:/Program Files (x86)/libwebsockets/share\";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>													</Message>
+      <Command>setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.key.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/favicon.ico F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/leaf.jpg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide-uncompressed.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/libwebsockets.org-logo.svg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/http2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/wss-over-h2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/lws-common.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.html F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.css F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\Release\websockets_static.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;D:\openssl\lib\libssl.lib;D:\openssl\lib\libcrypto.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/lib/Release/libwebsockets-test-server.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/libwebsockets-test-server.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>5105</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INSTALL_DATADIR="C:/Program Files (x86)/libwebsockets/share";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INSTALL_DATADIR=\"C:/Program Files (x86)/libwebsockets/share\";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>													</Message>
+      <Command>setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.key.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/favicon.ico F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/leaf.jpg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide-uncompressed.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/libwebsockets.org-logo.svg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/http2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/wss-over-h2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/lws-common.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.html F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.css F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\MinSizeRel\websockets_static.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;D:\openssl\lib\libssl.lib;D:\openssl\lib\libcrypto.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/lib/MinSizeRel/libwebsockets-test-server.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/libwebsockets-test-server.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>5105</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INSTALL_DATADIR="C:/Program Files (x86)/libwebsockets/share";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INSTALL_DATADIR=\"C:/Program Files (x86)/libwebsockets/share\";LWS_BUILDING_SHARED;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\include;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\plat\windows\..\..\..\win32port\win32helpers\zlib;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\tls\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\misc\misc\jrpc;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\.\async-dns;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\system\metrics\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\core-net\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\http\.\compression;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h1\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\h2\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\ws\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-skt\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\raw-file\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\roles\listen\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\event-libs\poll\..\poll;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\secure-streams\.;F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\..\include;D:\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>													</Message>
+      <Command>setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.key.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/libwebsockets-test-server.pem F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/favicon.ico F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/leaf.jpg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/candide-uncompressed.zip F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/libwebsockets.org-logo.svg F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/http2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/wss-over-h2.png F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/lws-common.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.html F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.css F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/test.js F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/../share/libwebsockets-test-server
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\lib\RelWithDebInfo\websockets_static.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;D:\openssl\lib\libssl.lib;D:\openssl\lib\libcrypto.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/lib/RelWithDebInfo/libwebsockets-test-server.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/libwebsockets-test-server.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\test-apps\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/project/cppLarryWilliamsTrade/external/libwebsockets-main -BF:/project/cppLarryWilliamsTrade/external/libwebsockets-main --check-stamp-file F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\test-apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/project/cppLarryWilliamsTrade/external/libwebsockets-main -BF:/project/cppLarryWilliamsTrade/external/libwebsockets-main --check-stamp-file F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\test-apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/project/cppLarryWilliamsTrade/external/libwebsockets-main -BF:/project/cppLarryWilliamsTrade/external/libwebsockets-main --check-stamp-file F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\test-apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/project/cppLarryWilliamsTrade/external/libwebsockets-main -BF:/project/cppLarryWilliamsTrade/external/libwebsockets-main --check-stamp-file F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/test-apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\test-apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\test-apps\test-server.c" />
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\win32port\win32helpers\getopt.c" />
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\win32port\win32helpers\getopt_long.c" />
+    <ClCompile Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\win32port\win32helpers\gettimeofday.c" />
+    <ClInclude Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\win32port\win32helpers\getopt.h" />
+    <ClInclude Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\win32port\win32helpers\gettimeofday.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\ZERO_CHECK.vcxproj">
+      <Project>{7E9C5261-FEE8-3CF2-A2FB-115530E9BFE8}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="F:\project\cppLarryWilliamsTrade\external\libwebsockets-main\lib\websockets.vcxproj">
+      <Project>{44C604C9-B078-3C09-A75B-7237B560C9B2}</Project>
+      <Name>websockets</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

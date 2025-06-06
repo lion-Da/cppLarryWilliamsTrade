@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl
+# Build directory: F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(http-client-hugeurl-warmcat "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/lws-minimal-http-client-hugeurl.exe")
+  set_tests_properties(http-client-hugeurl-warmcat PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;27;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(http-client-hugeurl-warmcat "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/lws-minimal-http-client-hugeurl.exe")
+  set_tests_properties(http-client-hugeurl-warmcat PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;27;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(http-client-hugeurl-warmcat "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/lws-minimal-http-client-hugeurl.exe")
+  set_tests_properties(http-client-hugeurl-warmcat PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;27;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(http-client-hugeurl-warmcat "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/lws-minimal-http-client-hugeurl.exe")
+  set_tests_properties(http-client-hugeurl-warmcat PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;27;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+else()
+  add_test(http-client-hugeurl-warmcat NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(http-client-hugeurl-warmcat-h1 "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Debug/lws-minimal-http-client-hugeurl.exe" "--h1")
+  set_tests_properties(http-client-hugeurl-warmcat-h1 PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;28;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(http-client-hugeurl-warmcat-h1 "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/Release/lws-minimal-http-client-hugeurl.exe" "--h1")
+  set_tests_properties(http-client-hugeurl-warmcat-h1 PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;28;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(http-client-hugeurl-warmcat-h1 "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/MinSizeRel/lws-minimal-http-client-hugeurl.exe" "--h1")
+  set_tests_properties(http-client-hugeurl-warmcat-h1 PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;28;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(http-client-hugeurl-warmcat-h1 "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/bin/RelWithDebInfo/lws-minimal-http-client-hugeurl.exe" "--h1")
+  set_tests_properties(http-client-hugeurl-warmcat-h1 PROPERTIES  TIMEOUT "20" WORKING_DIRECTORY "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl" _BACKTRACE_TRIPLES "F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;28;add_test;F:/project/cppLarryWilliamsTrade/external/libwebsockets-main/minimal-examples-lowlevel/http-client/minimal-http-client-hugeurl/CMakeLists.txt;0;")
+else()
+  add_test(http-client-hugeurl-warmcat-h1 NOT_AVAILABLE)
+endif()

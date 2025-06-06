@@ -5,17 +5,18 @@
 #include <map>
 #include <memory> 
 #include "data_types.h"
-using namespace std;
+using string = std::string;
 class Exchange
 {
+
     public:
         virtual ~Exchange() = default;
         virtual bool initialize(const string& api_key, const string& api_secret)  = 0;
-        virtual vector<OHLCV> fetchHistoricalData(const string& symbol, const string& timeframe, const string& start_time, const string& end_time) = 0;
+        virtual std::vector<OHLCV> fetchHistoricalData(const string& symbol, const string& timeframe, const string& start_time, const string& end_time) = 0;
         virtual double getCurrentPrice(const string& symbol) = 0;
         virtual bool placeBuyOrder(const string& symbol, double quantity, double price = 0) = 0;
         virtual bool placeSellOrder(const string& symbol, double quantity, double price =0) = 0 ; 
-        virtual vector<Order> getOpenOrders(const string& symbol) = 0;
+        virtual std::vector<Order> getOpenOrders(const string& symbol) = 0;
         string getName() const { return name; }
         bool isConnected() const { return connected; }
     protected:

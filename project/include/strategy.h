@@ -7,7 +7,7 @@
 #include <map>
 #include "exchange.h"
 #include "data_types.h"
-using namespace std;
+using string = std::string;
 struct Signal{
     string symbol;
     OrderSide side;
@@ -20,8 +20,8 @@ struct Signal{
 class Strategy{
 public:
     virtual ~Strategy() = default;
-    virtual bool initialize(const map<string, double>& parameters) = 0;
-    virtual vector<Signal> processData(const vector<OHLCV>& data) = 0;
+    virtual bool initialize(const std::map<string, double>& parameters) = 0;
+    virtual std::vector<Signal> processData(const std::vector<OHLCV>& data) = 0;
     virtual string getName() const = 0; 
     void setExchange(std::shared_ptr<Exchange> exch) {
         exchange = exch;

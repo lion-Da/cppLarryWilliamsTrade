@@ -353,7 +353,7 @@ std::string BinanceExchange::signRequest(const std::string& data) {
     // Calculate HMAC-SHA256
     HMAC(EVP_sha256(), 
          apiSecret.c_str(),                // Secret key
-         apiSecret.length(),               // Length of the secret key
+         static_cast<int>(apiSecret.length()),               // Length of the secret key
          reinterpret_cast<const unsigned char*>(data.c_str()), // Data to sign
          data.length(),                    // Length of data
          hash,                             // Output hash
@@ -374,7 +374,7 @@ size_t BinanceExchange::WriteCallBack(void* contents, size_t size, size_t nmemb,
     try {
         s->append((char*)contents, newLength);
         return newLength;
-    } catch (const std::bad_alloc& e) {
+    } catch (...) {
         // Handle memory problem
         return 0;
     }

@@ -1,0 +1,9 @@
+﻿  Microsoft (R) Macro Assembler (x64) Version 14.43.34809.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+   Assembling: inffasx64.asm
+  Microsoft (R) Macro Assembler (x64) Version 14.43.34809.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+   Assembling: gvmat64.asm
+.\zlibvc.def(4): fatal error LNK1118: “VERSION”语句中的语法错误
