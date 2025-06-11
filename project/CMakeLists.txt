@@ -31,8 +31,9 @@ include_directories(${OPENSSL_INCLUDE_DIR})
 
 target_link_libraries(volatility_breakout ${OPENSSL_LIBRARIES})
 # Find JSON library (nlohmann/json)
-find_package(nlohmann_json 3.2.0 REQUIRED)
-target_link_libraries(volatility_breakout nlohmann_json::nlohmann_json)
+#find_package(nlohmann_json 3.2.0 REQUIRED)
+#target_link_libraries(volatility_breakout nlohmann_json::nlohmann_json)
+include_directories("nlohmann")
 # Find libwebsockets
 #find_package(libwebsockets REQUIRED)
 #include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
