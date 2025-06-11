@@ -224,7 +224,7 @@ void WebSocketClient::setErrorCallback(ErrorCallback callback) {
 }
 
 void WebSocketClient::onMessage(const std::string& message) {
-    std::cout << "WebSocket received: " << message << std::endl;
+    //std::cout << "WebSocket received: " << message << std::endl;
     if (messageCallback) {
         messageCallback(message);
     }

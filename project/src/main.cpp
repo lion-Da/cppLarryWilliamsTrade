@@ -15,6 +15,7 @@
 #include "okx_exchange.h"
 #include "bybit_exchange.h"
 #include "env_loader.h"
+#include <unordered_map>
 // Global flag for termination
 volatile sig_atomic_t g_running = 1;
 
@@ -228,6 +229,79 @@ void testOKXExchange() {
         }
     }
 }
+
+
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define RESET "\033[0m"
+void testGetOkBbBtc()
+{
+    std::string okx_symbol = "BTC-USDT";
+    std::string bybit_symbol = "BTCUSDT";
+    std::string okx_channel = "tickers";
+    std::string bybit_channel = "tickers";
+
+    // Create exchanges
+    auto okx = std::make_shared<OKXExchange>();
+    auto bybit = std::make_shared<BybitExchange>();
+    // Initialize exchanges
+    if (!okx->initialize("", "")) {
+        std::cerr << "Failed to initialize OKX exchange" << std::endl;
+        return;
+    }
+
+    if (!bybit->initialize("", "")) {
+        std::cerr << "Failed to initialize Bybit exchange" << std::endl;
+        return;
+    }
+    double okx_price = 0.f;
+    double bb_price = 0.f;
+    auto price_strategy = [&]()
+    {
+        if(abs(okx_price - bb_price) > 10)
+        {
+            std::cout << "\r" << std::fixed << std::setprecision(8);
+            std::cout << "BTCUSDT OKX:" << RED << okx_price << RESET
+                      << ", Bybit: " << GREEN << bb_price << RESET << std::endl;
+        }
+        else
+        {
+            std::cout << std::fixed << std::setprecision(8);
+            std::cout << "BTCUSDT OKX:" << YELLOW << okx_price << RESET
+            << ", Bybit: " << YELLOW << bb_price << RESET << std::endl;
+        }
+        std::cout.flush(); // 强制刷新输出缓冲区
+    };
+    // Set up price update callbacks
+    okx->setRealTimePriceCallback([&](const std::string& symbol, double price) {
+        okx_price = price;
+        price_strategy();
+        
+    });
+
+    bybit->setRealTimePriceCallback([&](const std::string& symbol, double price) {
+        bb_price = price;
+        price_strategy();
+    });
+    
+    // Connect to WebSockets
+    if (!okx->connectWebSocket(okx_symbol, okx_channel)) {
+        std::cerr << "Failed to connect to OKX WebSocket" << std::endl;
+    }
+
+    if (!bybit->connectWebSocket(bybit_symbol, bybit_channel)) {
+        std::cerr << "Failed to connect to Bybit WebSocket" << std::endl;
+    }
+    
+    std::cout << "Both WebSockets connected. Press Enter to stop..." << std::endl;
+    std::cin.get();
+    
+    // Disconnect WebSockets
+    okx->disconnectWebSocket();
+    bybit->disconnectWebSocket();
+}
+
 
 // New function to run the actual trading bot with your improved strategy
 void runOKXTradingBot() {
@@ -659,7 +733,8 @@ int main() {
             std::cout << "2. Test OKX WebSocket" << std::endl;
             std::cout << "3. Test Bybit WebSocket" << std::endl;
             std::cout << "4. Test ALL Exchanges WebSockets" << std::endl;
-            std::cout << "5. Back to main menu" << std::endl;
+            std::cout << "5. Get OKX Bybit BTC Realtime Price By Websockets" << std::endl;
+            std::cout << "6. Back to main menu" << std::endl;
             
             int wsChoice;
             std::cout << "Enter your choice (1-5): ";
@@ -678,6 +753,9 @@ int main() {
                     break;
                 case 4:
                     testBothWebSockets();
+                    break;
+                case 5:
+                    testGetOkBbBtc(); 
                     break;
                 default:
                     std::cout << "Returning to main menu." << std::endl;

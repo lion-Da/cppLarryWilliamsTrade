@@ -1131,17 +1131,6 @@ set(libwebsockets_DIR ${PROJECT_BINARY_DIR})
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 message("DIR ${libwebsockets_DIR} CMP ${CMAKE_MODULE_PATH}")
 
-if (LWS_WITH_MINIMAL_EXAMPLES)
-	if (LWS_WITH_SECURE_STREAMS)
-		add_subdirectory(minimal-examples)
-	endif()
-	add_subdirectory(minimal-examples-lowlevel)
-endif()
-
-if (NOT LWS_WITHOUT_TESTAPPS)
-	add_subdirectory(test-apps)
-endif()
-
 if (NOT LWS_WITH_PLUGINS_BUILTIN)
 add_subdirectory(plugins)
 endif()
