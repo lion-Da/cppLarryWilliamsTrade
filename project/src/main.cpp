@@ -24,7 +24,12 @@ void signal_handler(int signal) {
     std::cout << "Received signal " << signal << ", shutting down..." << std::endl;
     g_running = 0;
 }
-
+std::string getTimestamp() {
+    auto now = std::chrono::system_clock::now();
+    auto now_ms = std::chrono::time_point_cast<std::chrono::milliseconds>(now);
+    long long timestamp_ms = now_ms.time_since_epoch().count();
+    return std::to_string(timestamp_ms);
+}
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
@@ -55,10 +60,12 @@ void testGetOkBbBtc()
     auto price_strategy = [&]()
     {
         std::cout << std::fixed << std::setprecision(8) 
-            << "BTCUSDT OKX(" 
-            << YELLOW << okx_prices.first << "," << okx_prices.second  << RESET
-            << ")  Bybit(" 
-            << YELLOW << bybit_prices.first << "," << bybit_prices.second << RESET
+            << "BTCUSDT "
+            << "Now:" << YELLOW << getTimestamp() << RESET << " "
+            << "OKX(" 
+            << YELLOW << okx_prices.first << "," << GREEN << okx_prices.second  << RESET
+            << ") Bybit(" 
+            << YELLOW << bybit_prices.first << "," << GREEN << bybit_prices.second << RESET
             << ")" << std::endl;
     };
     // Set up price update callbacks
