@@ -62,19 +62,19 @@ bool BybitExchange::connectWebSocket(const std::string& symbol, const std::strin
                 
                 // Add subscription args
                 if (channel == "tickers") {
-                    subscribeMsg["args"].push_back("tickers.BTCUSDT");
+                    subscribeMsg["args"].push_back(channel + "." + symbol);
                 } else if (channel.find("candle") == 0) {
                     // Extract interval from channel name (e.g., "candle1m" -> "1m")
-                    std::string interval = channel.substr(6);
-                    subscribeMsg["args"].push_back({
-                        {"channel", "candle" + interval},
-                        {"instId", symbol}
-                    });
+                    // std::string interval = channel.substr(6);
+                    // subscribeMsg["args"].push_back({
+                    //     {"channel", "candle" + interval},
+                    //     {"instId", symbol}
+                    // });
                 } else if (channel == "trades") {
-                    subscribeMsg["args"].push_back({
-                        {"channel", "trades"},
-                        {"instId", symbol}
-                    });
+                    // subscribeMsg["args"].push_back({
+                    //     {"channel", "trades"},
+                    //     {"instId", symbol}
+                    // });
                 }
                 
                 websocket->send(subscribeMsg.dump());
@@ -126,32 +126,41 @@ void BybitExchange::setRealTimeCandleCallback(std::function<void(const OHLCV&)> 
 void BybitExchange::handleWebSocketMessage(const std::string& message) {
     try {
         json data = json::parse(message);
-        
+        // std::cout << "Bybit WebSocket message: " << data.dump(4) << std::endl; // Debug output
         // Handle subscription confirmation
-        if (data.contains("event") && data["event"] == "subscribe") {
-            std::cout << "Successfully subscribed to Bybit channel" << std::endl;
-            return;
-        }
+        // if (data.contains("event") && data["event"] == "subscribe") {
+        //     std::cout << "Successfully subscribed to Bybit channel" << std::endl;
+        //     return;
+        // }
         
-        // Handle ping message
-        if (data.contains("event") && data["event"] == "ping") {
-            // Respond with pong
-            json pongMsg = {
-                {"event", "pong"}
-            };
-            websocket->send(pongMsg.dump());
-            return;
-        }
+        // // Handle ping message
+        // if (data.contains("event") && data["event"] == "ping") {
+        //     // Respond with pong
+        //     json pongMsg = {
+        //         {"event", "pong"}
+        //     };
+        //     websocket->send(pongMsg.dump());
+        //     return;
+        // }
         
         // Handle data message
-        if (data.contains("data") && data.contains("arg")) {
-            std::string channel = data["arg"]["channel"];
-            std::string symbol = data["arg"]["instId"];
-            
+        if (data.contains("data") && data.contains("topic")) {
+            std::string channel;
+            std::string symbol;
+            //"topic": "tickers.BTCUSDT"
+            std::string topic = data["topic"];
+            // get channel and synmbol from topic
+            if (topic.find('.') != std::string::npos) {
+                channel = topic.substr(0, topic.find('.'));
+                symbol = topic.substr(topic.find('.') + 1);
+            }
+
             // Process ticker data
             if (channel == "tickers" && priceUpdateCallback) {
-                for (const auto& item : data["data"]) {
-                    double price = std::stod(item["last"].get<std::string>());
+                const auto& data_element = data["data"];
+                if(data_element.contains("lastPrice") && data_element["lastPrice"].is_string()) {
+                    // Extract last price from ticker data
+                    double price = std::stod(data_element["lastPrice"].get<std::string>());
                     priceUpdateCallback(symbol, price);
                 }
             }
