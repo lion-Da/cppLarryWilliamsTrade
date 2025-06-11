@@ -57,7 +57,7 @@ void testGetOkBbBtc()
         std::cout << std::fixed << std::setprecision(8) 
             << "BTCUSDT OKX(" 
             << YELLOW << okx_prices.first << "," << okx_prices.second  << RESET
-            << ")  Bybit:(" 
+            << ")  Bybit(" 
             << YELLOW << bybit_prices.first << "," << bybit_prices.second << RESET
             << ")" << std::endl;
     };
