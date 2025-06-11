@@ -34,10 +34,15 @@ target_link_libraries(volatility_breakout ${OPENSSL_LIBRARIES})
 find_package(nlohmann_json 3.2.0 REQUIRED)
 target_link_libraries(volatility_breakout nlohmann_json::nlohmann_json)
 # Find libwebsockets
-find_package(libwebsockets REQUIRED)
-include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
-message("LIBWEBSOCKETS_INCLUDE_DIRS=" ${LIBWEBSOCKETS_INCLUDE_DIRS})
-target_link_libraries(volatility_breakout ${LIBWEBSOCKETS_LIBRARIES})
+#find_package(libwebsockets REQUIRED)
+#include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
+#message("LIBWEBSOCKETS_INCLUDE_DIRS=" ${LIBWEBSOCKETS_INCLUDE_DIRS})
+#target_link_libraries(volatility_breakout ${LIBWEBSOCKETS_LIBRARIES})
+add_subdirectory("libwebsockets")
+include_directories("libwebsockets/include")
+link_directories(${CMAKE_BINARY_DIR}/libwebsockets/lib)
+target_link_libraries(volatility_breakout websockets)
+
 
 # Install target
 install(TARGETS volatility_breakout DESTINATION bin)
