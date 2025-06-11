@@ -120,7 +120,7 @@ bool OKXExchange::isWebSocketConnected() const {
     return websocket && websocket->isConnected();
 }
 
-void OKXExchange::setRealTimePriceCallback(std::function<void(const std::string&, double)> callback) {
+void OKXExchange::setRealTimePriceCallback(std::function<void(const std::string&, double, const std::string&)> callback) {
     priceUpdateCallback = callback;
 }
 
@@ -131,8 +131,34 @@ void OKXExchange::setRealTimeCandleCallback(std::function<void(const OHLCV&)> ca
 void OKXExchange::handleWebSocketMessage(const std::string& message) {
     try {
         json data = json::parse(message);
-        
-        // Handle subscription confirmation
+/*
+Received OKX WebSocket message: {
+    "arg": {
+        "channel": "tickers",
+        "instId": "BTC-USDT"
+    },
+    "data": [
+        {
+            "askPx": "109658.1",
+            "askSz": "0.67008012",
+            "bidPx": "109658",
+            "bidSz": "1.27181544",
+            "high24h": "110393",
+            "instId": "BTC-USDT",
+            "instType": "SPOT",
+            "last": "109658.1",
+            "lastSz": "0.00079322",
+            "low24h": "108344.1",
+            "open24h": "109661.1",
+            "sodUtc0": "110274.1",
+            "sodUtc8": "109024",
+            "ts": "1749646867021",
+            "vol24h": "3902.32624992",
+            "volCcy24h": "427003648.298043872"
+        }
+    ]
+}
+*/        // Handle subscription confirmation
         if (data.contains("event") && data["event"] == "subscribe") {
             std::cout << "Successfully subscribed to OKX channel" << std::endl;
             return;
@@ -157,7 +183,7 @@ void OKXExchange::handleWebSocketMessage(const std::string& message) {
             if (channel == "tickers" && priceUpdateCallback) {
                 for (const auto& item : data["data"]) {
                     double price = std::stod(item["last"].get<std::string>());
-                    priceUpdateCallback(symbol, price);
+                    priceUpdateCallback(symbol, price, item["ts"].get<std::string>());
                 }
             }
             // Process candle data

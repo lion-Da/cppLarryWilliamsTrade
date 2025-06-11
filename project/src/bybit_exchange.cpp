@@ -115,7 +115,7 @@ bool BybitExchange::isWebSocketConnected() const {
     return websocket && websocket->isConnected();
 }
 
-void BybitExchange::setRealTimePriceCallback(std::function<void(const std::string&, double)> callback) {
+void BybitExchange::setRealTimePriceCallback(std::function<void(const std::string&, double, const std::string& ts)> callback) {
     priceUpdateCallback = callback;
 }
 
@@ -126,7 +126,25 @@ void BybitExchange::setRealTimeCandleCallback(std::function<void(const OHLCV&)> 
 void BybitExchange::handleWebSocketMessage(const std::string& message) {
     try {
         json data = json::parse(message);
-        // std::cout << "Bybit WebSocket message: " << data.dump(4) << std::endl; // Debug output
+        /*
+        Bybit WebSocket message: {
+            "cs": 76686182593,
+            "data": {
+                "highPrice24h": "110389.9",
+                "lastPrice": "109656.1",
+                "lowPrice24h": "108334.1",
+                "prevPrice24h": "109673.6",
+                "price24hPcnt": "-0.0002",
+                "symbol": "BTCUSDT",
+                "turnover24h": "883199669.53583323",
+                "usdIndexPrice": "109666.207928",
+                "volume24h": "8073.70254"
+            },
+            "topic": "tickers.BTCUSDT",
+            "ts": 1749646866830,
+            "type": "snapshot"
+        } 
+        */    
         // Handle subscription confirmation
         // if (data.contains("event") && data["event"] == "subscribe") {
         //     std::cout << "Successfully subscribed to Bybit channel" << std::endl;
@@ -161,7 +179,8 @@ void BybitExchange::handleWebSocketMessage(const std::string& message) {
                 if(data_element.contains("lastPrice") && data_element["lastPrice"].is_string()) {
                     // Extract last price from ticker data
                     double price = std::stod(data_element["lastPrice"].get<std::string>());
-                    priceUpdateCallback(symbol, price);
+                   
+                    priceUpdateCallback(symbol, price, std::to_string(data["ts"].get<int64_t>()));
                 }
             }
             // Process candle data

@@ -31,7 +31,7 @@ class OKXExchange : public Exchange
         bool isWebSocketConnected() const;
         
         // Set callbacks for real-time data
-        void setRealTimePriceCallback(std::function<void(const std::string&, double)> callback);
+        void setRealTimePriceCallback(std::function<void(const std::string&, double, const std::string&)> callback);
         void setRealTimeCandleCallback(std::function<void(const OHLCV&)> callback);
         
         // WebSocket message handler
@@ -60,7 +60,7 @@ class OKXExchange : public Exchange
     // Get timestamp in ISO8601 format for OKX API
     std::string getTimestamp();
     std::unique_ptr<WebSocketClient> websocket;
-    std::function<void(const std::string&, double)> priceUpdateCallback;
+    std::function<void(const std::string&, double, const std::string&)> priceUpdateCallback;
     std::function<void(const OHLCV&)> candleUpdateCallback;
 };
 

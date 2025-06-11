@@ -25,212 +25,6 @@ void signal_handler(int signal) {
     g_running = 0;
 }
 
-// Add these WebSocket testing functions
-void testBinanceWebSocket() {
-    std::cout << "\n=== Testing Binance WebSocket ===\n" << std::endl;
-    
-    // Create Binance exchange
-    auto binance = std::make_shared<BinanceExchange>();
-    
-    // Initialize exchange
-    if (!binance->initialize("", "")) {
-        std::cerr << "Failed to initialize Binance exchange" << std::endl;
-        return;
-    }
-    
-    // Set up price update callback
-    binance->setRealTimePriceCallback([](const std::string& symbol, double price) {
-        std::cout << "Binance real-time price for " << symbol << ": $" << price << std::endl;
-    });
-    
-    // Connect to WebSocket for Bitcoin price updates
-    std::string symbol = "btcusdt";
-    std::string channel = "ticker";
-    
-    std::cout << "Connecting to Binance WebSocket for " << symbol << " updates..." << std::endl;
-    
-    if (!binance->connectWebSocket(symbol, channel)) {
-        std::cerr << "Failed to connect to Binance WebSocket" << std::endl;
-        return;
-    }
-    
-    std::cout << "Binance WebSocket connected. Press Enter to stop..." << std::endl;
-    std::cin.get();
-    
-    // Disconnect WebSocket
-    binance->disconnectWebSocket();
-}
-
-void testOKXWebSocket() {
-    std::cout << "\n=== Testing OKX WebSocket ===\n" << std::endl;
-    
-    // Create OKX exchange
-    auto okx = std::make_shared<OKXExchange>();
-    
-    // Initialize exchange
-    if (!okx->initialize("", "")) {
-        std::cerr << "Failed to initialize OKX exchange" << std::endl;
-        return;
-    }
-    
-    // Set up price update callback
-    okx->setRealTimePriceCallback([](const std::string& symbol, double price) {
-        std::cout << "OKX real-time price for " << symbol << ": $" << price << std::endl;
-    });
-    
-    // Connect to WebSocket for Bitcoin price updates
-    std::string symbol = "BTC-USDT";
-    std::string channel = "tickers";
-    
-    std::cout << "Connecting to OKX WebSocket for " << symbol << " updates..." << std::endl;
-    
-    if (!okx->connectWebSocket(symbol, channel)) {
-        std::cerr << "Failed to connect to OKX WebSocket" << std::endl;
-        return;
-    }
-    
-    std::cout << "OKX WebSocket connected. Press Enter to stop..." << std::endl;
-    std::cin.get();
-    
-    // Disconnect WebSocket
-    okx->disconnectWebSocket();
-}
-
-void testBybitWebSockets() {
-    std::cout << "\n=== Testing ByBit WebSocket ===\n" << std::endl;
-    
-    // Create OKX exchange
-    auto bybit = std::make_shared<BybitExchange>();
-    
-    // Initialize exchange
-    if (!bybit->initialize("", "")) {
-        std::cerr << "Failed to initialize bybit exchange" << std::endl;
-        return;
-    }
-    
-    // Set up price update callback
-    bybit->setRealTimePriceCallback([](const std::string& symbol, double price) {
-        std::cout << "bybit real-time price for " << symbol << ": $" << price << std::endl;
-    });
-    
-    // Connect to WebSocket for Bitcoin price updates
-    std::string symbol = "BTCUSDT";
-    std::string channel = "tickers";
-    
-    std::cout << "Connecting to bybit WebSocket for " << symbol << " updates..." << std::endl;
-    
-    if (!bybit->connectWebSocket(symbol, channel)) {
-        std::cerr << "Failed to connect to OKX WebSocket" << std::endl;
-        return;
-    }
-    
-    std::cout << "bybit WebSocket connected. Press Enter to stop..." << std::endl;
-    std::cin.get();
-    
-    // Disconnect WebSocket
-    bybit->disconnectWebSocket();
-}
-
-void testBothWebSockets() {
-    std::cout << "\n=== Testing Both Exchanges WebSockets ===\n" << std::endl;
-    
-    // Create exchanges
-    auto binance = std::make_shared<BinanceExchange>();
-    auto okx = std::make_shared<OKXExchange>();
-    
-    // Initialize exchanges
-    if (!binance->initialize("", "")) {
-        std::cerr << "Failed to initialize Binance exchange" << std::endl;
-        return;
-    }
-    
-    if (!okx->initialize("", "")) {
-        std::cerr << "Failed to initialize OKX exchange" << std::endl;
-        return;
-    }
-    
-    // Set up price update callbacks
-    binance->setRealTimePriceCallback([](const std::string& symbol, double price) {
-        std::cout << "Binance " << symbol << ": $" << price << std::endl;
-    });
-    
-    okx->setRealTimePriceCallback([](const std::string& symbol, double price) {
-        std::cout << "OKX " << symbol << ": $" << price << std::endl;
-    });
-    
-    // Connect to WebSockets
-    if (!binance->connectWebSocket("btcusdt", "ticker")) {
-        std::cerr << "Failed to connect to Binance WebSocket" << std::endl;
-    }
-    
-    if (!okx->connectWebSocket("BTC-USDT", "tickers")) {
-        std::cerr << "Failed to connect to OKX WebSocket" << std::endl;
-    }
-    
-    std::cout << "Both WebSockets connected. Press Enter to stop..." << std::endl;
-    std::cin.get();
-    
-    // Disconnect WebSockets
-    binance->disconnectWebSocket();
-    okx->disconnectWebSocket();
-}
-
-void testOKXExchange() {
-    std::cout << "\n=== Testing OKX Exchange ===\n" << std::endl;
-    
-    // Create OKX exchange instance
-    auto okx = std::make_shared<OKXExchange>();
-    
-    // Initialize with empty API credentials (for public API endpoints)
-    if (!okx->initialize("", "")) {
-        std::cerr << "Failed to initialize OKX exchange" << std::endl;
-        return;
-    }
-    
-    // Test different symbol formats for OKX
-    std::vector<std::string> testSymbols = {
-        "BTC-USDT",    // Preferred OKX format
-        "ETH-USDT",    // Another common pair
-        "SOL-USDT"     // Another popular pair
-    };
-    
-    for (const auto& symbol : testSymbols) {
-        std::cout << "\nTesting symbol: " << symbol << std::endl;
-        
-        // Test fetching the current price
-        double price = okx->getCurrentPrice(symbol);
-        std::cout << "Current price of " << symbol << ": $" << price << std::endl;
-        
-        if (price > 0) {
-            // Test fetching historical data
-            std::cout << "Fetching historical data for " << symbol << "..." << std::endl;
-            
-            std::vector<OHLCV> historicalData = okx->fetchHistoricalData(
-                symbol, "1d", "", "");
-            
-            std::cout << "Fetched " << historicalData.size() << " data points" << std::endl;
-            
-            // Print the first few data points
-            int count = 0;
-            for (const auto& candle : historicalData) {
-                time_t timestamp = candle.timestamp;
-                std::tm* tm = std::localtime(&timestamp);
-                char date[11];
-                std::strftime(date, sizeof(date), "%Y-%m-%d", tm);
-                
-                std::cout << date << ": Open=" << candle.open << ", High=" << candle.high
-                          << ", Low=" << candle.low << ", Close=" << candle.close 
-                          << ", Volume=" << candle.volume << std::endl;
-                
-                if (++count >= 5) break; // Print only first 5 candles
-            }
-        } else {
-            std::cout << "Could not get price for " << symbol << ", skipping historical data" << std::endl;
-        }
-    }
-}
-
-
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
@@ -255,33 +49,29 @@ void testGetOkBbBtc()
         std::cerr << "Failed to initialize Bybit exchange" << std::endl;
         return;
     }
-    double okx_price = 0.f;
-    double bb_price = 0.f;
+    std::pair<std::string, double> okx_prices;
+    std::pair<std::string, double> bybit_prices;
+
     auto price_strategy = [&]()
     {
-        if(abs(okx_price - bb_price) > 10)
-        {
-            std::cout << "\r" << std::fixed << std::setprecision(8);
-            std::cout << "BTCUSDT OKX:" << RED << okx_price << RESET
-                      << ", Bybit: " << GREEN << bb_price << RESET << std::endl;
-        }
-        else
-        {
-            std::cout << std::fixed << std::setprecision(8);
-            std::cout << "BTCUSDT OKX:" << YELLOW << okx_price << RESET
-            << ", Bybit: " << YELLOW << bb_price << RESET << std::endl;
-        }
-        std::cout.flush(); // 强制刷新输出缓冲区
+        std::cout << std::fixed << std::setprecision(8) 
+            << "BTCUSDT OKX(" 
+            << YELLOW << okx_prices.first << "," << okx_prices.second  << RESET
+            << ")  Bybit:(" 
+            << YELLOW << bybit_prices.first << "," << bybit_prices.second << RESET
+            << ")" << std::endl;
     };
     // Set up price update callbacks
-    okx->setRealTimePriceCallback([&](const std::string& symbol, double price) {
-        okx_price = price;
+    okx->setRealTimePriceCallback([&](const std::string& symbol, double price, const std::string& ts) {
+        okx_prices.first = ts;
+        okx_prices.second = price;
         price_strategy();
         
     });
 
-    bybit->setRealTimePriceCallback([&](const std::string& symbol, double price) {
-        bb_price = price;
+    bybit->setRealTimePriceCallback([&](const std::string& symbol, double price, const std::string& ts) {
+        bybit_prices.first = ts;
+        bybit_prices.second = price;
         price_strategy();
     });
     
@@ -668,94 +458,30 @@ int main() {
     std::cout << "==========================================" << std::endl;
     
     std::cout << "\nSelect an option:" << std::endl;
-    std::cout << "1. Run traditional backtests" << std::endl;
-    std::cout << "2. Test OKX Exchange API" << std::endl;
-    std::cout << "3. Test WebSocket connections" << std::endl;
-    std::cout << "4. Run improved backtests" << std::endl;
-    std::cout << "5. Start OKX trading bot" << std::endl;
-    std::cout << "6. Exit" << std::endl;
+    std::cout << "1. Test WebSocket connections" << std::endl;
+    std::cout << "2. Exit" << std::endl;
     
     int choice;
-    std::cout << "Enter your choice (1-6): ";
+    std::cout << "Enter your choice (1-2): ";
     std::cin >> choice;
     std::cin.ignore(); // Clear the newline character
     
     switch (choice) {
+    
         case 1: {
-            // Original backtesting code
-            auto exchange = std::make_shared<BinanceExchange>();
-            if (!exchange->initialize("", "")) {
-                std::cerr << "Failed to initialize exchange" << std::endl;
-                return 1;
-            }
-            
-            auto strategy = std::make_shared<VolatilityBreakout>();
-            std::vector<double> kFactors = {0.3, 0.4, 0.5};
-            BacktestEngine backtester;
-            std::string symbol = "BTCUSDT";
-            std::string timeframe = "1d";
-            
-            std::cout << "Fetching historical data for " << symbol << "..." << std::endl;
-            std::vector<OHLCV> historicalData = exchange->fetchHistoricalData(
-                symbol, timeframe, "", "");
-            
-            if (historicalData.empty()) {
-                std::cerr << "Failed to fetch historical data" << std::endl;
-                return 1;
-            }
-            
-            std::cout << "Fetched " << historicalData.size() << " data points" << std::endl;
-            
-            for (double k : kFactors) {
-                std::cout << "\nRunning backtest with k-factor = " << k << std::endl;
-                
-                std::map<std::string, double> params;
-                params["kFactor"] = k;
-                strategy->initialize(params);
-                strategy->setExchange(exchange);
-                
-                BacktestResult result = backtester.runBacktest(strategy, historicalData, 10000.0);
-                std::string report = backtester.generateReport(result);
-                std::cout << report << std::endl;
-            }
-            std::cout << "Traditional backtesting completed!" << std::endl;
-            break;
-        }
-        
-        case 2:
-            testOKXExchange();
-            break;
-            
-        case 3: {
             // WebSocket tests submenu
             std::cout << "\nSelect WebSocket test:" << std::endl;
-            std::cout << "1. Test Binance WebSocket" << std::endl;
-            std::cout << "2. Test OKX WebSocket" << std::endl;
-            std::cout << "3. Test Bybit WebSocket" << std::endl;
-            std::cout << "4. Test ALL Exchanges WebSockets" << std::endl;
-            std::cout << "5. Get OKX Bybit BTC Realtime Price By Websockets" << std::endl;
-            std::cout << "6. Back to main menu" << std::endl;
+            std::cout << "1. Get OKX Bybit BTC Realtime Price By Websockets" << std::endl;
+            std::cout << "2. Back to main menu" << std::endl;
             
             int wsChoice;
-            std::cout << "Enter your choice (1-5): ";
+            std::cout << "Enter your choice (1-2): ";
             std::cin >> wsChoice;
             std::cin.ignore(); // Clear the newline character
             
             switch (wsChoice) {
                 case 1:
-                    testBinanceWebSocket();
-                    break;
-                case 2:
-                    testOKXWebSocket();
-                    break;
-                case 3:
-                    testBybitWebSockets();
-                    break;
-                case 4:
-                    testBothWebSockets();
-                    break;
-                case 5:
-                    testGetOkBbBtc(); 
+                    testGetOkBbBtc();
                     break;
                 default:
                     std::cout << "Returning to main menu." << std::endl;
@@ -764,17 +490,8 @@ int main() {
             break;
         }
         
-        case 4:
-            // Run improved backtests
-            runBacktestImprovedStrategy();
-            break;
             
-        case 5:
-            // Start OKX trading bot
-            runOKXTradingBot();
-            break;
-            
-        case 6:
+        case 2:
             std::cout << "Exiting program." << std::endl;
             return 0;
             
