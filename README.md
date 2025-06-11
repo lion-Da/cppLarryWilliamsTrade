@@ -4,7 +4,7 @@ linux 编译
 1. 安装依赖
 ```bash
 sudo apt update
-sudo apt install libcurl4-openssl-dev nlohmann-json3-dev cmake build-essential libssl-dev git 
+sudo apt install libcurl4-openssl-dev cmake build-essential libssl-dev git 
 ```
 -------------------------------------------------------
 2. cmake 构建
