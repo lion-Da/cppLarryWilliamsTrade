@@ -13,7 +13,8 @@
 #include "backtest_engine.h"
 #include "websocket_client.h"
 #include "okx_exchange.h"
-
+#include "bybit_exchange.h"
+#include "env_loader.h"
 // Global flag for termination
 volatile sig_atomic_t g_running = 1;
 
@@ -92,6 +93,41 @@ void testOKXWebSocket() {
     
     // Disconnect WebSocket
     okx->disconnectWebSocket();
+}
+
+void testBybitWebSockets() {
+    std::cout << "\n=== Testing ByBit WebSocket ===\n" << std::endl;
+    
+    // Create OKX exchange
+    auto bybit = std::make_shared<BybitExchange>();
+    
+    // Initialize exchange
+    if (!bybit->initialize("", "")) {
+        std::cerr << "Failed to initialize bybit exchange" << std::endl;
+        return;
+    }
+    
+    // Set up price update callback
+    bybit->setRealTimePriceCallback([](const std::string& symbol, double price) {
+        std::cout << "bybit real-time price for " << symbol << ": $" << price << std::endl;
+    });
+    
+    // Connect to WebSocket for Bitcoin price updates
+    std::string symbol = "BTCUSDT";
+    std::string channel = "tickers";
+    
+    std::cout << "Connecting to bybit WebSocket for " << symbol << " updates..." << std::endl;
+    
+    if (!bybit->connectWebSocket(symbol, channel)) {
+        std::cerr << "Failed to connect to OKX WebSocket" << std::endl;
+        return;
+    }
+    
+    std::cout << "bybit WebSocket connected. Press Enter to stop..." << std::endl;
+    std::cin.get();
+    
+    // Disconnect WebSocket
+    bybit->disconnectWebSocket();
 }
 
 void testBothWebSockets() {
@@ -553,6 +589,7 @@ void runBacktestImprovedStrategy() {
 }
 
 int main() {
+    EnvLoader::loadEnv(); // Load environment variables if needed
     std::cout << "Larry Williams Volatility Breakout Strategy" << std::endl;
     std::cout << "==========================================" << std::endl;
     
@@ -620,11 +657,12 @@ int main() {
             std::cout << "\nSelect WebSocket test:" << std::endl;
             std::cout << "1. Test Binance WebSocket" << std::endl;
             std::cout << "2. Test OKX WebSocket" << std::endl;
-            std::cout << "3. Test Both Exchanges WebSockets" << std::endl;
-            std::cout << "4. Back to main menu" << std::endl;
+            std::cout << "3. Test Bybit WebSocket" << std::endl;
+            std::cout << "4. Test ALL Exchanges WebSockets" << std::endl;
+            std::cout << "5. Back to main menu" << std::endl;
             
             int wsChoice;
-            std::cout << "Enter your choice (1-4): ";
+            std::cout << "Enter your choice (1-5): ";
             std::cin >> wsChoice;
             std::cin.ignore(); // Clear the newline character
             
@@ -636,6 +674,9 @@ int main() {
                     testOKXWebSocket();
                     break;
                 case 3:
+                    testBybitWebSockets();
+                    break;
+                case 4:
                     testBothWebSockets();
                     break;
                 default:

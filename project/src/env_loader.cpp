@@ -8,6 +8,7 @@
 std::map<std::string, std::string> EnvLoader::envVariables;
 
 bool EnvLoader::loadEnv(const std::string& filePath) {
+    std::cout << "Loaded env variable start" << std::endl;
     // Try to open the .env file
     std::ifstream envFile(filePath);
     if (!envFile.is_open()) {
@@ -30,7 +31,7 @@ bool EnvLoader::loadEnv(const std::string& filePath) {
         if (std::regex_search(line, match, envRegex)) {
             std::string key = match[1];
             std::string value = match[2];
-            
+            std::cout << "Loaded env variable: " << key << " = " << value << std::endl;
             // Remove quotes if present
             if (value.size() >= 2 && 
                 ((value.front() == '"' && value.back() == '"') || 

@@ -15,8 +15,10 @@ OKXExchange::OKXExchange(): curl(nullptr), websocket(nullptr)
     apiKey = EnvLoader::get("OKX_API_KEY");
     apiSecret = EnvLoader::get("OKX_API_SECRET");
     passphrase = EnvLoader::get("OKX_PASSPHRASE");
-    name = "OKX";
+    std::cout << "OKX API Key: " << apiKey << std::endl;
+    name = "test2";
     connected = false;
+
     curl_global_init(CURL_GLOBAL_ALL);
     curl = curl_easy_init();
     
