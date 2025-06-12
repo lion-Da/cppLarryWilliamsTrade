@@ -30,6 +30,25 @@ std::string getTimestamp() {
     long long timestamp_ms = now_ms.time_since_epoch().count();
     return std::to_string(timestamp_ms);
 }
+
+std::string timestampToString(const std::string& ts) {
+    // 将 Unix 时间戳转换为 time_t 类型
+    long long timestamp = std::stoll(ts);
+    std::time_t time = static_cast<std::time_t>(timestamp / 1000); // 转换为秒级时间戳
+    std::string tail_time = std::to_string(timestamp % 1000); // 获取毫秒部分
+    // tail_time 补齐3位长度
+    while (tail_time.length() < 3) {
+        tail_time = "0" + tail_time;
+    }
+    // 将 time_t 类型转换为 tm 结构体（UTC 时间）
+    std::tm *ptm = std::gmtime(&time);
+    // 将 tm 结构体转换为格式化的字符串
+    char buffer[256] = {0};
+    std::strftime(buffer, 80, "%Y-%m-%d %H:%M:%S", ptm);
+    // 返回格式化的字符串
+    return std::string(buffer) + "." + tail_time;
+}
+
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
@@ -61,11 +80,11 @@ void testGetOkBbBtc()
     {
         std::cout << std::fixed << std::setprecision(8) 
             << "BTCUSDT "
-            << "Now:" << YELLOW << getTimestamp() << RESET << " "
+            << "Now:" << YELLOW << timestampToString(getTimestamp()) << RESET << " "
             << "OKX(" 
-            << YELLOW << okx_prices.first << "," << GREEN << okx_prices.second  << RESET
+            << YELLOW << timestampToString(okx_prices.first) << "," << GREEN << okx_prices.second  << RESET
             << ") Bybit(" 
-            << YELLOW << bybit_prices.first << "," << GREEN << bybit_prices.second << RESET
+            << YELLOW << timestampToString(bybit_prices.first) << "," << GREEN << bybit_prices.second << RESET
             << ")" << std::endl;
     };
     // Set up price update callbacks
