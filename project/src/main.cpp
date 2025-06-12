@@ -38,7 +38,7 @@ void testGetOkBbBtc()
 {
     std::string okx_symbol = "BTC-USDT";
     std::string bybit_symbol = "BTCUSDT";
-    std::string okx_channel = "tickers";
+    std::string okx_channel = "mark-price";
     std::string bybit_channel = "tickers";
 
     // Create exchanges

@@ -80,6 +80,11 @@ bool OKXExchange::connectWebSocket(const std::string& symbol, const std::string&
                         {"channel", "trades"},
                         {"instId", symbol}
                     });
+                } else if (channel == "mark-price") {
+                    subscribeMsg["args"].push_back({
+                        {"channel", "mark-price"},
+                        {"instId", symbol}
+                    });
                 }
                 
                 websocket->send(subscribeMsg.dump());
@@ -183,6 +188,28 @@ Received OKX WebSocket message: {
             if (channel == "tickers" && priceUpdateCallback) {
                 for (const auto& item : data["data"]) {
                     double price = std::stod(item["last"].get<std::string>());
+                    priceUpdateCallback(symbol, price, item["ts"].get<std::string>());
+                }
+            }
+            else if(channel == "mark-price" && priceUpdateCallback) {
+                /*
+                    {
+                        "arg": {
+                            "channel": "mark-price",
+                            "instId": "BTC-USDT"
+                        },
+                        "data": [
+                            {
+                                "instId": "BTC-USDT",
+                                "instType": "MARGIN",
+                                "markPx": "108398.6",
+                                "ts": "1749693165499"
+                            }
+                        ]
+                    }
+                */
+                for (const auto& item : data["data"]) {
+                    double price = std::stod(item["markPx"].get<std::string>());
                     priceUpdateCallback(symbol, price, item["ts"].get<std::string>());
                 }
             }
