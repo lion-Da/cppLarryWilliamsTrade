@@ -17,6 +17,20 @@ struct Signal{
     string reason; 
 };
 
+class ArbitrageOpportunity
+{
+    std::string symbol;
+    std::string buy_exchange;
+    std::string sell_exchange;
+    float buy_price;
+    float sell_price;
+    float profit_percentage; // Profit in percentage
+    float max_volume;
+    int64_t timestamp; // Timestamp in milliseconds
+
+    void handle_orderbook_data(const CommonFormatData& data);
+};
+
 class Strategy{
 public:
     virtual ~Strategy() = default;

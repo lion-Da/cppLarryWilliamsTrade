@@ -16,6 +16,7 @@
 #include "bybit_exchange.h"
 #include "env_loader.h"
 #include <unordered_map>
+#include "strategy.h"
 // Global flag for termination
 volatile sig_atomic_t g_running = 1;
 
@@ -49,6 +50,33 @@ std::string timestampToString(const std::string& ts) {
     return std::string(buffer) + "." + tail_time;
 }
 
+std::string  formatData(const CommonFormatData& data) {
+    std::string exchange = data.exchange;
+    std::string symbol = data.symbol;
+    int64_t timestamp = data.timestamp;
+    std::vector<std::string> bids = data.bids;
+    std::vector<std::string> asks = data.asks;
+
+    // Convert timestamp to string
+    std::string timestampStr = timestampToString(std::to_string(timestamp));
+
+    // Format bids and asks
+    std::string formattedBids, formattedAsks;
+    for (const auto& bid : bids) {
+        formattedBids += bid + " ";
+    }
+    for (const auto& ask : asks) {
+        formattedAsks += ask + " ";
+    }
+
+    // Create the formatted output
+    return "Exchange: " + exchange + "\n" +
+           "Symbol: " + symbol + "\n" +
+           "Timestamp: " + timestampStr + "\n" +
+           "Bids: " + formattedBids + "\n" +
+           "Asks: " + formattedAsks + "\n";
+}
+
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
@@ -57,8 +85,8 @@ void testGetOkBbBtc()
 {
     std::string okx_symbol = "BTC-USDT";
     std::string bybit_symbol = "BTCUSDT";
-    std::string okx_channel = "mark-price";
-    std::string bybit_channel = "tickers";
+    std::string okx_channel = "books";
+    std::string bybit_channel = "orderbook";
 
     // Create exchanges
     auto okx = std::make_shared<OKXExchange>();
@@ -88,17 +116,12 @@ void testGetOkBbBtc()
             << ")" << std::endl;
     };
     // Set up price update callbacks
-    okx->setRealTimePriceCallback([&](const std::string& symbol, double price, const std::string& ts) {
-        okx_prices.first = ts;
-        okx_prices.second = price;
-        price_strategy();
-        
+    okx->setRealTimeOrderBookCallback([&](const CommonFormatData& data) {
+        std::cout << formatData(data) << std::endl;
     });
 
-    bybit->setRealTimePriceCallback([&](const std::string& symbol, double price, const std::string& ts) {
-        bybit_prices.first = ts;
-        bybit_prices.second = price;
-        price_strategy();
+    bybit->setRealTimeOrderBookCallback([&](const CommonFormatData& data) {
+        std::cout << formatData(data) << std::endl;
     });
     
     // Connect to WebSockets
@@ -479,10 +502,7 @@ void runBacktestImprovedStrategy() {
 }
 
 int main() {
-    EnvLoader::loadEnv(); // Load environment variables if needed
-    std::cout << "Larry Williams Volatility Breakout Strategy" << std::endl;
-    std::cout << "==========================================" << std::endl;
-    
+    EnvLoader::loadEnv(); // Load environment variables if needed    
     std::cout << "\nSelect an option:" << std::endl;
     std::cout << "1. Test WebSocket connections" << std::endl;
     std::cout << "2. Exit" << std::endl;
@@ -498,7 +518,8 @@ int main() {
             // WebSocket tests submenu
             std::cout << "\nSelect WebSocket test:" << std::endl;
             std::cout << "1. Get OKX Bybit BTC Realtime Price By Websockets" << std::endl;
-            std::cout << "2. Back to main menu" << std::endl;
+            std::cout << "2. Test Bot" << std::endl;
+            std::cout << "3. Back to main menu" << std::endl;
             
             int wsChoice;
             std::cout << "Enter your choice (1-2): ";
@@ -508,6 +529,9 @@ int main() {
             switch (wsChoice) {
                 case 1:
                     testGetOkBbBtc();
+                    break;
+                case 2:
+                    runOKXTradingBot();
                     break;
                 default:
                     std::cout << "Returning to main menu." << std::endl;

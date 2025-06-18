@@ -63,18 +63,9 @@ bool BybitExchange::connectWebSocket(const std::string& symbol, const std::strin
                 // Add subscription args
                 if (channel == "tickers") {
                     subscribeMsg["args"].push_back(channel + "." + symbol);
-                } else if (channel.find("candle") == 0) {
-                    // Extract interval from channel name (e.g., "candle1m" -> "1m")
-                    // std::string interval = channel.substr(6);
-                    // subscribeMsg["args"].push_back({
-                    //     {"channel", "candle" + interval},
-                    //     {"instId", symbol}
-                    // });
-                } else if (channel == "trades") {
-                    // subscribeMsg["args"].push_back({
-                    //     {"channel", "trades"},
-                    //     {"instId", symbol}
-                    // });
+                } 
+                else if (channel == "orderbook") {
+                    subscribeMsg["args"].push_back(channel + ".1." + symbol);
                 }
                 
                 websocket->send(subscribeMsg.dump());
@@ -95,18 +86,6 @@ bool BybitExchange::connectWebSocket(const std::string& symbol, const std::strin
 
 void BybitExchange::disconnectWebSocket() {
     if (websocket) {
-        // Send unsubscribe message if connected
-        if (websocket->isConnected()) {
-            json unsubscribeMsg = {
-                {"op", "unsubscribe"},
-                {"args", json::array()}
-            };
-            websocket->send(unsubscribeMsg.dump());
-            
-            // Give it a moment to process the unsubscribe
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        }
-        
         websocket->disconnect();
     }
 }
@@ -122,7 +101,9 @@ void BybitExchange::setRealTimePriceCallback(std::function<void(const std::strin
 void BybitExchange::setRealTimeCandleCallback(std::function<void(const OHLCV&)> callback) {
     candleUpdateCallback = callback;
 }
-
+void BybitExchange::setRealTimeOrderBookCallback(std::function<void(const CommonFormatData&)> callback) {
+    orderbookCallback = callback;
+}
 void BybitExchange::handleWebSocketMessage(const std::string& message) {
     try {
         json data = json::parse(message);
@@ -145,21 +126,6 @@ void BybitExchange::handleWebSocketMessage(const std::string& message) {
             "type": "snapshot"
         } 
         */    
-        // Handle subscription confirmation
-        // if (data.contains("event") && data["event"] == "subscribe") {
-        //     std::cout << "Successfully subscribed to Bybit channel" << std::endl;
-        //     return;
-        // }
-        
-        // // Handle ping message
-        // if (data.contains("event") && data["event"] == "ping") {
-        //     // Respond with pong
-        //     json pongMsg = {
-        //         {"event", "pong"}
-        //     };
-        //     websocket->send(pongMsg.dump());
-        //     return;
-        // }
         
         // Handle data message
         if (data.contains("data") && data.contains("topic")) {
@@ -183,21 +149,61 @@ void BybitExchange::handleWebSocketMessage(const std::string& message) {
                     priceUpdateCallback(symbol, price, std::to_string(data["ts"].get<int64_t>()));
                 }
             }
-            // Process candle data
-            else if (channel.find("candle") == 0 && candleUpdateCallback) {
-                for (const auto& item : data["data"]) {
-                    if (item.size() >= 6) {
-                        OHLCV candle;
-                        candle.timestamp = std::stoll(item[0].get<std::string>()) / 1000; // Convert from ms to s
-                        candle.open = std::stod(item[1].get<std::string>());
-                        candle.high = std::stod(item[2].get<std::string>());
-                        candle.low = std::stod(item[3].get<std::string>());
-                        candle.close = std::stod(item[4].get<std::string>());
-                        candle.volume = std::stod(item[5].get<std::string>());
+            else if (channel == "orderbook" && orderbookCallback) {
+                // Handle order book updates
+                // std::cout << "Order book update for " << symbol << ": " << data.dump(4) << std::endl;
+                CommonFormatData orderbook_data;
+                orderbook_data.exchange = "Bybit";
+                orderbook_data.symbol = symbol.substr(symbol.find('.') + 1); // Remove "1." prefix
+                orderbook_data.timestamp = data["ts"].get<int64_t>();
+
+                if(data["data"].contains("a") && data["data"].contains("b")) {
+                    try
+                    {
+                        const auto& asks = data["data"]["a"];
+                        const auto& bids = data["data"]["b"];
                         
-                        candleUpdateCallback(candle);
+                        for(const auto& ask : asks) {
+                            orderbook_data.asks.push_back(ask[0].get<std::string>());
+                        }
+
+                        for(const auto& bid : bids) {
+                            orderbook_data.bids.push_back(bid[0].get<std::string>());
+                        }
+
+                        orderbookCallback(orderbook_data);
+                    }
+                    catch(const std::exception& e)
+                    {
+                        std::cerr << e.what() << '\n';
                     }
                 }
+
+                /*
+                Order book update for 1.BTCUSDT: {
+                    "cts": 1750148961525,
+                    "data": {
+                        "a": [
+                            [
+                                "106798",
+                                "1.10634"
+                            ]
+                        ],
+                        "b": [
+                            [
+                                "106797.9",
+                                "0.429797"
+                            ]
+                        ],
+                        "s": "BTCUSDT",
+                        "seq": 77377992351,
+                        "u": 293507
+                    },
+                    "topic": "orderbook.1.BTCUSDT",
+                    "ts": 1750148961528,
+                    "type": "snapshot"
+                }
+                */
             }
         }
     } catch (const std::exception& e) {

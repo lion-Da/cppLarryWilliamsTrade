@@ -31,7 +31,8 @@ class BybitExchange : public Exchange
         // Set callbacks for real-time data
         void setRealTimePriceCallback(std::function<void(const std::string&, double, const std::string& ts)> callback);
         void setRealTimeCandleCallback(std::function<void(const OHLCV&)> callback);
-        
+        void setRealTimeOrderBookCallback(std::function<void(const CommonFormatData&)> callback);
+
         // WebSocket message handler
         void handleWebSocketMessage(const std::string& message);
         
@@ -57,6 +58,7 @@ class BybitExchange : public Exchange
     std::unique_ptr<WebSocketClient> websocket;
     std::function<void(const std::string&, double, const std::string& ts)> priceUpdateCallback;
     std::function<void(const OHLCV&)> candleUpdateCallback;
+    std::function<void(const CommonFormatData&)> orderbookCallback;
 };
 
 

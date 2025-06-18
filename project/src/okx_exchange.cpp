@@ -85,6 +85,11 @@ bool OKXExchange::connectWebSocket(const std::string& symbol, const std::string&
                         {"channel", "mark-price"},
                         {"instId", symbol}
                     });
+                } else if (channel == "books") {
+                    subscribeMsg["args"].push_back({
+                        {"channel", "books"},
+                        {"instId", symbol}
+                    });
                 }
                 
                 websocket->send(subscribeMsg.dump());
@@ -132,6 +137,9 @@ void OKXExchange::setRealTimePriceCallback(std::function<void(const std::string&
 void OKXExchange::setRealTimeCandleCallback(std::function<void(const OHLCV&)> callback) {
     candleUpdateCallback = callback;
 }
+void OKXExchange::setRealTimeOrderBookCallback(std::function<void(const CommonFormatData&)> callback) {
+    orderbookCallback = callback;
+}
 
 void OKXExchange::handleWebSocketMessage(const std::string& message) {
     try {
@@ -178,7 +186,7 @@ Received OKX WebSocket message: {
             websocket->send(pongMsg.dump());
             return;
         }
-        
+        // std::cout << "Received OKX WebSocket message: " << data.dump(4) << std::endl;
         // Handle data message
         if (data.contains("data") && data.contains("arg")) {
             std::string channel = data["arg"]["channel"];
@@ -228,6 +236,76 @@ Received OKX WebSocket message: {
                         candleUpdateCallback(candle);
                     }
                 }
+            }
+            else if (channel == "books" && orderbookCallback) {
+                for(const auto& item : data["data"]) {
+                    // Process order book updates
+                    CommonFormatData orderbook_data;
+                    orderbook_data.exchange = "OKX";
+                    orderbook_data.symbol = symbol;
+                    orderbook_data.timestamp = std::stoll(item["ts"].get<std::string>());
+
+                    if(item.contains("asks") && item.contains("bids")) 
+                    {
+                        const auto& asks = item["asks"];
+                        const auto& bids = item["bids"];
+                        
+                        for(const auto& ask : asks) {
+                            orderbook_data.asks.push_back(ask[0].get<std::string>());
+                        }
+
+                        for(const auto& bid : bids) {
+                            orderbook_data.bids.push_back(bid[0].get<std::string>());
+                        }
+                        orderbookCallback(orderbook_data);
+                    }
+                }
+               
+                /*
+                 {
+    "action": "update",
+    "arg": {
+        "channel": "books",
+        "instId": "BTC-USDT"
+    },
+    "data": [
+        {
+            "asks": [
+                [
+                    "106803.3",
+                    "0.39738157",
+                    "0",
+                    "10"
+                ],
+                [
+                    "106810.9",
+                    "0.27284022",
+                    "0",
+                    "1"
+                ],
+            ],
+            "bids": [
+                [
+                    "106803.2",
+                    "0.50276524",
+                    "0",
+                    "12"
+                ],
+                [
+                    "106799.9",
+                    "0.03249663",
+                    "0",
+                    "2"
+                ],
+            ],
+            "checksum": 691172457,
+            "prevSeqId": 56657333676,
+            "seqId": 56657333800,
+            "ts": "1750148961607"
+        }
+    ]
+}
+                */
             }
         }
     } catch (const std::exception& e) {

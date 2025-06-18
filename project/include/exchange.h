@@ -6,6 +6,42 @@
 #include <memory> 
 #include "data_types.h"
 using namespace std;
+
+struct CommonFormatData
+{
+    std::string exchange;
+    std::string symbol;
+    std::vector<std::string> bids;
+    std::vector<std::string> asks;
+    int64_t timestamp; 
+};
+
+struct OrderBookData
+{
+    std::string exchange;
+    std::string symbol;
+    float best_bid;
+    float best_ask;
+    float bid_size;
+    float ask_size;
+    int64_t timestamp; // Timestamp in milliseconds
+};
+
+
+
+// 'small', 'medium', 'large'
+#define RBITRAGE_STRATEGY "medium"
+
+#define ORDERBOOK_DEPTH 5
+
+// 套利参数 (基础配置，会被深度策略覆盖)
+#define MIN_PROFIT_PERCENTAGE  0.0001  
+#define MAX_POSITION_SIZE  1.0         
+
+// # 风险控制
+#define MAX_PRICE_DEVIATION  0.001     
+#define PRICE_UPDATE_TIMEOUT  5       
+
 class Exchange
 {
     public:
